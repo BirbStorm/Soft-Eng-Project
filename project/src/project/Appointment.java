@@ -1,9 +1,18 @@
 package project;
 
+import java.util.Date;
+
 public class Appointment {
 
-	public static void main(String [] args) {
-		System.out.print("This is test 2 of making sure my push is working.");
+	public Date appointmentDayTime;
+	public Doctor assignedDoc;
+	public Nurse assignedNurse;
+	public Patient patient;
+	public String reason;
+	public Room room;
+	
+	public Appointment makeAppointment() {
+		
 	}
 	
 }
