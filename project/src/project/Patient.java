@@ -1,7 +1,13 @@
+package project;
+
 public class Patient {
     private Appointment appointment;
     public String firstName, lastName;
     public int SSN;
+
+
+
+    public boolean hasInsurance;
 
     public Patient(String firstName, String lastName, int SSN) {
         this.firstName = firstName;
@@ -27,5 +33,13 @@ public class Patient {
 
     public int getSSN() {
         return SSN;
+    }
+
+    public boolean isHasInsurance() {
+        return hasInsurance;
+    }
+
+    public void setHasInsurance(boolean hasInsurance) {
+        this.hasInsurance = hasInsurance;
     }
 }
