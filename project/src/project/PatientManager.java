@@ -16,7 +16,7 @@ public class PatientManager {
                 return i;
             }
         }
-        return 0;
+        return -1;
     }
 
     public void removePatient(Patient p){
