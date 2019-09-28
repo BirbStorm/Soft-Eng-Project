@@ -3,7 +3,7 @@ package project;
 import java.util.ArrayList;
 
 public class PatientManager {
-    ArrayList<Patient> patients = new ArrayList();
+    private ArrayList<Patient> patients = new ArrayList<>();
 
     public void addPatient(Patient patient){
         patients.add(patient);

@@ -2,5 +2,4 @@
 <component inheritJdk="true">
 	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
-	<lib name="JUnit5.4" scope="TEST"/>
 </component>

@@ -2,12 +2,12 @@ package project;
 
 public class Patient {
     private Appointment appointment;
-    public String firstName, lastName;
-    public int SSN;
+    private String firstName, lastName;
+    private int SSN;
 
 
 
-    public boolean hasInsurance;
+    private boolean hasInsurance;
 
     public Patient(String firstName, String lastName, int SSN) {
         this.firstName = firstName;
