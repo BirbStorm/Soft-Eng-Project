@@ -3,7 +3,7 @@ package project;
 import java.util.ArrayList;
 
 public class RoomManager {
-    ArrayList<Room> rooms = new ArrayList<>();
+    private ArrayList<Room> rooms = new ArrayList<>();
 
     public void addRoom(Room room){
         rooms.add(room);
