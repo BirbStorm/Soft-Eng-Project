@@ -27,8 +27,7 @@ public class Receptionist {
         pm.removePatient(p);
     }
 
-    public void assignRoom(Doctor d, Nurse n, Patient p){
-//        Room room = new Room(d,n,p,120);
-//        rm.addRoom(room);
+    public void assignRoom(Room room){
+        this.appointment.setRoom(room);
     }
 }
