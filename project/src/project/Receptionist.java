@@ -19,16 +19,16 @@ public class Receptionist {
         this.appointment = appointment;
     }
 
-    public void registerPatient(Patient p){
+    public void registerPatient(Patient p) {
         pm.addPatient(p);
     }
 
-    public void removePatient(Patient p){
+    public void removePatient(Patient p) {
         pm.removePatient(p);
     }
 
-    public void assignRoom(Doctor d, Nurse n, Patient p){
-//        Room room = new Room(d,n,p,120);
-//        rm.addRoom(room);
+    public void assignRoom(Doctor d, Nurse n, Patient p) {
+        // Room room = new Room(d,n,p,120);
+        // rm.addRoom(room);
     }
 }
