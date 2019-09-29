@@ -19,6 +19,10 @@ public class Receptionist {
         appointment.setReason(reason);
     }
 
+    public void cancelAppointment(Appointment appointment) {
+        am.removeAppointment(appointment);
+    }
+
     public Person getReceptionist() {
         return receptionist;
     }

@@ -3,6 +3,7 @@ package project;
 import java.util.Date;
 
 public class Patient {
+    private AppointmentManager am;
     private Appointment appointment;
     private String firstName, lastName;
     private int SSN;
@@ -23,6 +24,10 @@ public class Patient {
         appointment.setAppointmentDate(appointmentDayTime);
         appointment.setPatient(patient);
         appointment.setReason(reason);
+    }
+
+    public void cancelAppointment(Appointment appointment) {
+        am.removeAppointment(appointment);
     }
 
     public String getFirstName() {
