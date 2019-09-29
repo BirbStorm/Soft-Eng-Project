@@ -1,11 +1,23 @@
 package project;
 
+import java.util.Date;
+
 public class Receptionist {
     private Person receptionist;
     private Appointment appointment;
     private AppointmentManager am = new AppointmentManager();
     private RoomManager rm = new RoomManager();
     private PatientManager pm = new PatientManager();
+
+    public void makeAppointment(Date appointmentDayTime, Patient patient, String reason) {
+        Appointment temp = new Appointment(appointmentDayTime, patient, reason);
+    }
+
+    public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason) {
+        appointment.setAppointmentDate(appointmentDayTime);
+        appointment.setPatient(patient);
+        appointment.setReason(reason);
+    }
 
     public Person getReceptionist() {
         return receptionist;

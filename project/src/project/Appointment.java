@@ -12,8 +12,10 @@ public class Appointment {
     private Room room;
     private String diagnosis;
 
-    public Appointment makeAppointment() {
-        return null;
+    public Appointment(Date appointmentDayTime, Patient patient, String reason) {
+        this.appointmentDayTime = appointmentDayTime;
+        this.patient = patient;
+        this.reason = reason;
     }
 
     public String getDiagnosis() {
