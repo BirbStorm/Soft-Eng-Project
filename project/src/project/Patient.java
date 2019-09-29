@@ -1,5 +1,7 @@
 package project;
 
+import java.util.Date;
+
 public class Patient {
     private Appointment appointment;
     private String firstName, lastName;
@@ -11,6 +13,16 @@ public class Patient {
         this.firstName = firstName;
         this.lastName = lastName;
         this.SSN = SSN;
+    }
+
+    public void createAppointment(Date appointmentDayTime, Patient patient, String reason) {
+        Appointment temp = new Appointment(appointmentDayTime, patient, reason);
+    }
+
+    public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason) {
+        appointment.setAppointmentDate(appointmentDayTime);
+        appointment.setPatient(patient);
+        appointment.setReason(reason);
     }
 
     public String getFirstName() {
