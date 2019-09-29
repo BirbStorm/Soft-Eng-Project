@@ -5,8 +5,6 @@ public class Patient {
     private String firstName, lastName;
     private int SSN;
 
-
-
     private boolean hasInsurance;
 
     public Patient(String firstName, String lastName, int SSN) {
