@@ -13,14 +13,14 @@ public class Doctor {
     }
 
     public Room getRoomNumber() {
-        return appointment.room;
+        return appointment.getRoom();
     }
 
     public Nurse getNurse() {
-        return appointment.assignedNurse;
+        return appointment.getAssignedNurse();
     }
 
     public Patient getPatient() {
-        return appointment.patient;
+        return appointment.getPatient();
     }
 }

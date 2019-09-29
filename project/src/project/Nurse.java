@@ -11,19 +11,19 @@ public class Nurse {
     }
 
     public void administeredTreatment() {
-        administeredTreatment = true;
+        this.administeredTreatment = true;
     }
 
     public Doctor getDoctor() {
-        return appointment.assignedDoc;
+        return appointment.getAssignDoctor();
     }
 
     public Patient getPatient() {
-        return appointment.patient;
+        return appointment.getPatient();
     }
 
     public void makeDiagnosis(String diagnosis) {
-        appointment.diagnosis = diagnosis;
+        appointment.setDiagnosis(diagnosis);
     }
 
 }
