@@ -24,7 +24,11 @@ public class Doctor {
         return appointment.getPatient();
     }
 
-    public String getDiagnosis(Appointment appointment){
+    public String getDiagnosis() {
         return appointment.getDiagnosis();
+    }
+
+    public void addPrescription(String medication) {
+        appointment.addMedication(medication);
     }
 }

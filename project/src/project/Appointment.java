@@ -12,8 +12,10 @@ public class Appointment {
     private String reason;
     private Room room;
     private String diagnosis;
+    private String recommendedTreatment;
 
     private ArrayList<String> administeredTreatments = new ArrayList<String>();
+    private ArrayList<String> prescribedMedication = new ArrayList<String>();
 
     private boolean hasArrived = false;
 
@@ -89,6 +91,26 @@ public class Appointment {
 
     public void hasAdminister(String medication) {
         administeredTreatments.add(medication);
+    }
+
+    public void assignTreatment(String treatment) {
+        recommendedTreatment = treatment;
+    }
+
+    public String getRecommendedTreatment() {
+        return recommendedTreatment;
+    }
+
+    public void addMedication(String medication) {
+        prescribedMedication.add(medication);
+    }
+
+    public ArrayList<String> getAdministedTreatments() {
+        return administeredTreatments;
+    }
+
+    public ArrayList<String> getPrescribedMedication() {
+        return prescribedMedication;
     }
 
 }
