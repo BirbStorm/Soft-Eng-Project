@@ -23,4 +23,8 @@ public class Doctor {
     public Patient getPatient() {
         return appointment.getPatient();
     }
+
+    public String getDiagnosis(Appointment appointment){
+        return appointment.getDiagnosis();
+    }
 }

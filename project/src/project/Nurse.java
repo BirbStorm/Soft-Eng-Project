@@ -26,4 +26,8 @@ public class Nurse {
         appointment.setDiagnosis(diagnosis);
     }
 
+    public void administeredTreatment(String medication) {
+        appointment.hasAdminister(medication);
+    }
+
 }

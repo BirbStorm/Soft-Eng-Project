@@ -1,6 +1,7 @@
 package project;
 
 import java.util.Date;
+import java.util.ArrayList;
 
 public class Appointment {
 
@@ -11,6 +12,10 @@ public class Appointment {
     private String reason;
     private Room room;
     private String diagnosis;
+
+    private ArrayList<String> administeredTreatments = new ArrayList<String>();
+
+    private boolean hasArrived = false;
 
     public Appointment(Date appointmentDayTime, Patient patient, String reason) {
         this.appointmentDayTime = appointmentDayTime;
@@ -72,6 +77,18 @@ public class Appointment {
 
     public void setAppointmentDate(Date date) {
         this.appointmentDayTime = date;
+    }
+
+    public boolean hasSignedIn() {
+        return hasArrived;
+    }
+
+    public void signIn() {
+        hasArrived = true;
+    }
+
+    public void hasAdminister(String medication) {
+        administeredTreatments.add(medication);
     }
 
 }

@@ -47,4 +47,8 @@ public class Receptionist {
         // Room room = new Room(d,n,p,120);
         // rm.addRoom(room);
     }
+
+    public void signIn(Appointment appointment){
+        appointment.signIn();
+    }
 }
