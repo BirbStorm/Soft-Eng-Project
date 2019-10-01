@@ -13,10 +13,11 @@ public class Receptionist {
         Appointment temp = new Appointment(appointmentDayTime, patient, reason);
     }
 
-    public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason) {
+    public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason, Doctor doctor) {
         appointment.setAppointmentDate(appointmentDayTime);
         appointment.setPatient(patient);
         appointment.setReason(reason);
+        appointment.setAssignDoctor(doctor);
     }
 
     public void cancelAppointment(Appointment appointment) {
@@ -43,11 +44,10 @@ public class Receptionist {
         pm.removePatient(p);
     }
 
-    public void assignRoom(Doctor d, Nurse n, Patient p) {
-        // Room room = new Room(d,n,p,120);
-        // rm.addRoom(room);
+    public void assignRoom(Room room){
+        this.appointment.setRoom(room);
     }
-
+    
     public void signIn(Appointment appointment){
         appointment.signIn();
     }
