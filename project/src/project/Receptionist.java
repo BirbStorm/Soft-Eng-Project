@@ -11,6 +11,7 @@ public class Receptionist {
 
     public void makeAppointment(Date appointmentDayTime, Patient patient, String reason) {
         Appointment temp = new Appointment(appointmentDayTime, patient, reason);
+        am.addAppointment(temp);
     }
 
     public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason) {
@@ -48,7 +49,7 @@ public class Receptionist {
         // rm.addRoom(room);
     }
 
-    public void signIn(Appointment appointment){
+    public void signIn(Appointment appointment) {
         appointment.signIn();
     }
 }
