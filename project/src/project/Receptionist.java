@@ -46,7 +46,8 @@ public class Receptionist {
 
     public void assignRoom(Room room){
         this.appointment.setRoom(room);
-
+    }
+    
     public void signIn(Appointment appointment){
         appointment.signIn();
     }
