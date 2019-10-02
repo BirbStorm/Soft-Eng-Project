@@ -105,7 +105,7 @@ public class Appointment {
         prescribedMedication.add(medication);
     }
 
-    public ArrayList<String> getAdministedTreatments() {
+    public ArrayList<String> getAdministeredTreatments() {
         return administeredTreatments;
     }
 

@@ -24,9 +24,10 @@ public class Patient {
     }
 
     public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason) {
-        appointment.setAppointmentDate(appointmentDayTime);
-        appointment.setPatient(patient);
-        appointment.setReason(reason);
+        Appointment temp = am.getAppointment(appointment);
+        temp.setAppointmentDate(appointmentDayTime);
+        temp.setPatient(patient);
+        temp.setReason(reason);
     }
 
     public void cancelAppointment(Appointment appointment) {
@@ -66,6 +67,6 @@ public class Patient {
     }
 
     public void updateTreatments() {
-        allTreatments.addAll(appointment.getAdministedTreatments());
+        allTreatments.addAll(appointment.getAdministeredTreatments());
     }
 }

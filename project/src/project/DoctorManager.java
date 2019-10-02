@@ -20,7 +20,7 @@ public class DoctorManager {
 
     public Doctor getDoctor(Doctor doctor){
         for (Doctor doc : doctors) {
-            if(doc.equals(doctors)){
+            if(doc.equals(doctor)){
                 return doc;
             }
         }
