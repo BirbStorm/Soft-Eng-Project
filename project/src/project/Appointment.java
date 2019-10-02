@@ -18,11 +18,13 @@ public class Appointment {
     private ArrayList<String> prescribedMedication = new ArrayList<String>();
 
     private boolean hasArrived = false;
+    public double receipt;
 
     public Appointment(Date appointmentDayTime, Patient patient, String reason) {
         this.appointmentDayTime = appointmentDayTime;
         this.patient = patient;
         this.reason = reason;
+        receipt = 80;
     }
 
     public String getDiagnosis() {
@@ -114,7 +116,6 @@ public class Appointment {
     }
 
     public double bill(){
-        double receipt = 80;
         for (String medicine: getPrescribedMedication()){
             receipt += 20;
         }

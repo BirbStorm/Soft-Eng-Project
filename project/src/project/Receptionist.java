@@ -53,4 +53,8 @@ public class Receptionist {
     public void signIn(){
         appointment.signIn();
     }
+
+    public double receipt(){
+        return appointment.bill();
+    }
 }

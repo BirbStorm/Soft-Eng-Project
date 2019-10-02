@@ -68,4 +68,8 @@ public class Patient {
     public void updateTreatments() {
         allTreatments.addAll(appointment.getAdministeredTreatments());
     }
+
+    public void payReceipt(){
+        appointment.receipt = 0;
+    }
 }
