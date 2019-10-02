@@ -23,10 +23,9 @@ public class Patient {
         am.addAppointment(temp);
     }
 
-    public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason) {
+    public void editAppointment(Appointment appointment, Date appointmentDayTime, String reason) {
         Appointment temp = am.getAppointment(appointment);
         temp.setAppointmentDate(appointmentDayTime);
-        temp.setPatient(patient);
         temp.setReason(reason);
     }
 

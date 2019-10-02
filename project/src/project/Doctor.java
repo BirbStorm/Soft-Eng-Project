@@ -39,7 +39,7 @@ public class Doctor extends Nurse{
     }
 
     public ArrayList<String> getAdministeredTreatments() {
-        return appointment.getAdministedTreatments();
+        return appointment.getAdministeredTreatments();
     }
 
 }

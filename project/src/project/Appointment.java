@@ -113,4 +113,17 @@ public class Appointment {
         return prescribedMedication;
     }
 
+    public double bill(){
+        double receipt = 80;
+        for (String medicine: getPrescribedMedication()){
+            receipt += 20;
+        }
+        for (String treatments: getAdministeredTreatments()){
+            receipt += 40;
+        }
+        if(patient.isHasInsurance()){
+            return receipt * .5;
+        }
+        return receipt;
+    }
 }
