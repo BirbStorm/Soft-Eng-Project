@@ -2,11 +2,14 @@ package project;
 
 import java.util.ArrayList;
 
-public class Doctor {
+public class Doctor extends Nurse{
 
     private Person doctor;
     private Appointment appointment;
 
+    public Doctor (Person doctor){
+        this.doctor = doctor;
+    }
     public void getAppointment(Appointment appointment) {
         this.appointment = appointment;
     }
