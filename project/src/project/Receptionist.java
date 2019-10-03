@@ -32,7 +32,7 @@ public class Receptionist {
         this.receptionist = receptionist;
     }
 
-    public void setAppointment(Appointment appointment) {
+    public void getAppointment(Appointment appointment) {
         this.appointment = appointment;
     }
 
