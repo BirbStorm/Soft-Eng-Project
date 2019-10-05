@@ -46,29 +46,15 @@ public class Receptionist {
         pm.removePatient(p);
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public void assignRoom(Room room){
         this.appointment.setRoom(room);
-=======
-    public void assignRoom(Doctor d, Nurse n, Patient p) {
-        // Room room = new Room(d,n,p,120);
-        // rm.addRoom(room);
-=======
-    public void assignRoom(Room room){
-        this.appointment.setRoom(room);
->>>>>>> ada72dfee5ebc52044fc721553acece6557a1f8b
     }
     
     public void signIn(){
         appointment.signIn();
-<<<<<<< HEAD
->>>>>>> a007be122f8254e3051102326aa4fb337a60d45c
-=======
     }
 
     public double receipt(){
         return appointment.bill();
->>>>>>> ada72dfee5ebc52044fc721553acece6557a1f8b
     }
 }
