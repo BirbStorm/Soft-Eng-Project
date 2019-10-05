@@ -5,11 +5,11 @@ import java.util.ArrayList;
 
 public class Patient {
     private AppointmentManager am;
-    private Appointment appointment;
+    public Appointment appointment;
     private Person p;
     private int SSN;
-    private ArrayList<String> allPrescriptions = new ArrayList<String>();
-    private ArrayList<String> allTreatments = new ArrayList<String>();
+    private ArrayList<String> allPrescriptions = new ArrayList<>();
+    private ArrayList<String> allTreatments = new ArrayList<>();
 
     private boolean hasInsurance;
 
@@ -69,7 +69,7 @@ public class Patient {
         allTreatments.addAll(appointment.getAdministeredTreatments());
     }
 
-    public void payReceipt(){
-        appointment.receipt = 0;
+    public void payReceipt(Appointment a){
+        a.receipt = 0;
     }
 }

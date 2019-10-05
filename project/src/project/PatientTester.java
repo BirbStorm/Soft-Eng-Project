@@ -1,8 +1,13 @@
 package project;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Date;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class PatientTester{
+    @Test
     void createAppointment_test(){
         Date d = new Date();
         Person p1 = new Person("Sean", "Northcutt");

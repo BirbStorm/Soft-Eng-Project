@@ -6,7 +6,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 class AppointmentTester {
     @Test
-    void test_bill(){
+    public void test_bill(){
         double expected_receipt = 60.0;
         Date d = new Date();
         Person p = new Person("firstName", "lastName");
