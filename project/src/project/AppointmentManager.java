@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class AppointmentManager {
 
-    private ArrayList<Appointment> appointments = new ArrayList<Appointment>();
+    private ArrayList<Appointment> appointments = new ArrayList<>();
 
     public void addAppointment(Appointment appointment) {
         appointments.add(appointment);
