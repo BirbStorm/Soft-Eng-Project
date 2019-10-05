@@ -18,4 +18,13 @@ public class AppointmentManager {
         }
     }
 
+    public Appointment getAppointment(Appointment appointment){
+        for (Appointment a: appointments) {
+            if(a.equals(appointment)){
+                return a;
+            }
+        }
+        return null;
+    }
+
 }

@@ -1,5 +1,7 @@
 package project;
 
+import java.util.ArrayList;
+
 public class Nurse {
 
     private Person nurse;
@@ -28,6 +30,18 @@ public class Nurse {
 
     public void administeredTreatment(String medication) {
         appointment.hasAdminister(medication);
+    }
+
+    public ArrayList<String> getPrescriptions() {
+        return appointment.getPrescribedMedication();
+    }
+
+    public ArrayList<String> getAdministeredTreatments() {
+        return appointment.getAdministeredTreatments();
+    }
+
+    public boolean hasBeenTreated() {
+        return administeredTreatment;
     }
 
 }
