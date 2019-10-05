@@ -14,11 +14,13 @@ public class Receptionist {
         am.addAppointment(temp);
     }
 
-    public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason, Doctor doctor) {
-        appointment.setAppointmentDate(appointmentDayTime);
-        appointment.setPatient(patient);
-        appointment.setReason(reason);
-        appointment.setAssignDoctor(doctor);
+    public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason,
+            Doctor doctor) {
+        Appointment temp = am.getAppointment(appointment);
+        temp.setAppointmentDate(appointmentDayTime);
+        temp.setPatient(patient);
+        temp.setReason(reason);
+        temp.setAssignDoctor(doctor);
     }
 
     public void cancelAppointment(Appointment appointment) {
@@ -37,6 +39,10 @@ public class Receptionist {
         this.appointment = appointment;
     }
 
+    public void setAppointment(Appointment appointment) {
+        this.appointment = am.getAppointment(appointment);
+    }
+
     public void registerPatient(Patient p) {
         pm.addPatient(p);
     }
@@ -45,11 +51,15 @@ public class Receptionist {
         pm.removePatient(p);
     }
 
-    public void assignRoom(Room room){
+    public void assignRoom(Room room) {
         this.appointment.setRoom(room);
     }
-    
-    public void signIn(){
+
+    public void signIn() {
         appointment.signIn();
+    }
+
+    public double receipt() {
+        return appointment.bill();
     }
 }

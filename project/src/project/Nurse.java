@@ -37,7 +37,7 @@ public class Nurse {
     }
 
     public ArrayList<String> getAdministeredTreatments() {
-        return appointment.getAdministedTreatments();
+        return appointment.getAdministeredTreatments();
     }
 
     public boolean hasBeenTreated() {

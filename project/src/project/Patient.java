@@ -23,10 +23,10 @@ public class Patient {
         am.addAppointment(temp);
     }
 
-    public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason) {
-        appointment.setAppointmentDate(appointmentDayTime);
-        appointment.setPatient(patient);
-        appointment.setReason(reason);
+    public void editAppointment(Appointment appointment, Date appointmentDayTime, String reason) {
+        Appointment temp = am.getAppointment(appointment);
+        temp.setAppointmentDate(appointmentDayTime);
+        temp.setReason(reason);
     }
 
     public void cancelAppointment(Appointment appointment) {
@@ -66,6 +66,10 @@ public class Patient {
     }
 
     public void updateTreatments() {
-        allTreatments.addAll(appointment.getAdministedTreatments());
+        allTreatments.addAll(appointment.getAdministeredTreatments());
+    }
+
+    public void payReceipt(){
+        appointment.receipt = 0;
     }
 }
