@@ -14,8 +14,8 @@ public class Appointment {
     private String diagnosis;
     private String recommendedTreatment;
 
-    private ArrayList<String> administeredTreatments = new ArrayList<String>();
-    private ArrayList<String> prescribedMedication = new ArrayList<String>();
+    private ArrayList<String> administeredTreatments = new ArrayList<>();
+    private ArrayList<String> prescribedMedication = new ArrayList<>();
 
     private boolean hasArrived = false;
     public double receipt;
