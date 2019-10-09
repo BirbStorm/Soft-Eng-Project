@@ -79,8 +79,9 @@ public class Doctor extends Nurse{
 
     
     /** 
-     * Doctor needs to review a Patient's history of prescribed
-     * mediction for the Appointment. 
+     * Doctor needs to review a Patient's history of treatments 
+     * for the Appointment. 
+     * 
      * @return ArrayList<String>
      */
     public ArrayList<String> getAdministeredTreatments() {
