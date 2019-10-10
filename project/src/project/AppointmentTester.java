@@ -2,7 +2,7 @@ package project;
 import org.junit.*;
 import java.util.Date;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.testing.AssertJUnit.assertEquals;
 
 class AppointmentTester {
     @Test

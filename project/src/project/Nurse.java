@@ -8,6 +8,10 @@ public class Nurse {
     private Appointment appointment;
     private boolean administeredTreatment = false;
 
+    public Nurse(Person nurse) {
+        this.nurse = nurse;
+    }
+
     public void getAppointment(Appointment appointment) {
         this.appointment = appointment;
     }

@@ -4,8 +4,6 @@ public class Room {
     public Nurse nurse;
     private int number;
 
-
-
     public Room(Doctor doctor, Nurse nurse, int number) {
         this.nurse = nurse;
         this.number = number;
