@@ -14,7 +14,6 @@ public class Receptionist {
     private AppointmentManager am = new AppointmentManager();
     private RoomManager rm = new RoomManager();
     private PatientManager pm = new PatientManager();
-
     
     /** 
      * @param receptionist
@@ -43,6 +42,8 @@ public class Receptionist {
         am.addAppointment(temp);
     }
 
+    public void editAppointment(Appointment appointment, Date appointmentDayTime, Patient patient, String reason,
+            Doctor doctor) {
     
     /** 
      * @param appointment
@@ -67,6 +68,17 @@ public class Receptionist {
         am.removeAppointment(appointment);
     }
 
+    public Person getReceptionist() {
+        return receptionist;
+    }
+
+    public Receptionist(Person receptionist) {
+        this.receptionist = receptionist;
+    }
+
+    public void getAppointment(Appointment appointment) {
+        this.appointment = appointment;
+    }
     
     /** 
      * @param appointment
@@ -93,6 +105,15 @@ public class Receptionist {
         pm.removePatient(p);
     }
 
+    public void assignRoom(Room room) {
+        this.appointment.setRoom(room);
+    }
+
+    public void signIn() {
+        appointment.signIn();
+    }
+
+    public double receipt() {
     
     /** 
      * @param room

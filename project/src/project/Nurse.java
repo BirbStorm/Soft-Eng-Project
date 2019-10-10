@@ -11,7 +11,6 @@ public class Nurse {
     private Person nurse;
     private Appointment appointment;
     private boolean administeredTreatment = false;
-
     
     /** 
      * @param appointment
@@ -23,7 +22,10 @@ public class Nurse {
     public void administeredTreatment() {
         this.administeredTreatment = true;
     }
-
+    
+    public Nurse(Person nurse){
+        this.nurse = nurse;
+    }
     
     /** 
      * @return Doctor
