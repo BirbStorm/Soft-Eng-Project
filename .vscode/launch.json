@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Exp_Ari_Avg",
+            "request": "launch",
+            "mainClass": "Exp_Ari_Avg"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Process_TCPProbe_jo",
+            "request": "launch",
+            "mainClass": "Process_TCPProbe_jo"
+        }
+    ]
+}
