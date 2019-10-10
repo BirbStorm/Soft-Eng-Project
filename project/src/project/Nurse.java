@@ -22,7 +22,10 @@ public class Nurse {
     public void administeredTreatment() {
         this.administeredTreatment = true;
     }
-
+    
+    public Nurse(Person nurse){
+        this.nurse = nurse;
+    }
     
     /** 
      * @return Doctor
