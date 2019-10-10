@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class PatientTester{
     @Test
@@ -19,6 +19,6 @@ public class PatientTester{
         int SSN2 = 48299382;
         Patient pat2 = new Patient(p2, SSN2);
         pat2.createAppointment(d, pat2, "sick");
-        assertEquals(expected_appt, pat2.appointment);
+        assertNotEquals(expected_appt, pat2.appointment);
     }
 }
