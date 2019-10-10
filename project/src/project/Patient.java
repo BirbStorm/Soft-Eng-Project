@@ -4,8 +4,8 @@ import java.util.Date;
 import java.util.ArrayList;
 
 public class Patient {
-    private AppointmentManager am;
-    public Appointment appointment;
+    private AppointmentManager am = new AppointmentManager();
+    public Appointment appointment = null;
     private Person p;
     private int SSN;
     private ArrayList<String> allPrescriptions = new ArrayList<>();
@@ -21,6 +21,7 @@ public class Patient {
     public void createAppointment(Date appointmentDayTime, Patient patient, String reason) {
         Appointment temp = new Appointment(appointmentDayTime, patient, reason);
         am.addAppointment(temp);
+        appointment = temp;
     }
 
     public void editAppointment(Appointment appointment, Date appointmentDayTime, String reason) {
