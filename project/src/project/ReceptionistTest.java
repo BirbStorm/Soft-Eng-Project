@@ -2,38 +2,38 @@ package project;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-//import org.mockito.Mock;
-//
-//import static org.mockito.MockitoAnnotations.initMocks;
 
 class ReceptionistTest {
 
-//    @Mock
-    private Person mockReceptionist;
-
+    private Person person;
+    private Patient p;
+    private Doctor d;
+    private Nurse n;
+    private Room r;
     private Receptionist receptionistUnderTest;
 
     @BeforeEach
     void setUp() {
-//        initMocks(this);
-        receptionistUnderTest = new Receptionist(mockReceptionist);
+        person = new Person("allo", "vera");
+        receptionistUnderTest = new Receptionist(person);
+        Doctor d = null;
+        Nurse n = null;
+        Patient p = null;
+        Room r = new Room (d,n,22);
     }
 
     @Test
     void testRegisterPatient() {
-        // Setup
-        final Patient p = null;
-
         // Run the test
         receptionistUnderTest.registerPatient(p);
 
         // Verify the results
+//        assertTrue();
     }
 
     @Test
     void testRemovePatient() {
         // Setup
-        final Patient p = null;
 
         // Run the test
         receptionistUnderTest.removePatient(p);
@@ -44,13 +44,11 @@ class ReceptionistTest {
     @Test
     void testAssignRoom() {
         // Setup
-        final Doctor d = null;
-        final Nurse n = null;
-        final Patient p = null;
 
         // Run the test
-        //receptionistUnderTest.assignRoom(d, n, p);
+        receptionistUnderTest.assignRoom(r);
 
         // Verify the results
+
     }
 }

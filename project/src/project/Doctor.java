@@ -12,11 +12,11 @@ public class Doctor extends Nurse{
      * @param doctor
      * @return 
      */
-    public Doctor (Person doctor){
+    public Doctor(Person doctor) {
         this.doctor = doctor;
     }
-    
-    /** 
+
+    /**
      * @param appointment
      */
     public void getAppointment(Appointment appointment) {

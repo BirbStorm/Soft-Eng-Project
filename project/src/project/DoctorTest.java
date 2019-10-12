@@ -6,8 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class DoctorTest extends Nurse {
 
     @BeforeEach
@@ -26,17 +24,7 @@ class DoctorTest extends Nurse {
     void testMakeDiagnosis() {
     }
 
-    @Test
-    void testAdministeredTreatment1() {
-    }
 
-    @Test
-    void testGetAppointment() {
-    }
-
-    @Test
-    void testGetPatient() {
-    }
 
     @Test
     void addPrescription() {
@@ -51,11 +39,4 @@ class DoctorTest extends Nurse {
         //assertTrue(doc.addPrescription("test"));
     }
 
-    @Test
-    void testGetPrescriptions() {
-    }
-
-    @Test
-    void testGetAdministeredTreatments() {
-    }
 }
