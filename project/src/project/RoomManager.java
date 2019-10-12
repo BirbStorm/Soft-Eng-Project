@@ -1,7 +1,7 @@
 package project;
 
 import java.util.ArrayList;
-/** 
+/**
  * A class to keep track of all current Rooms. Is managed
  * by Receptionist who can add and remove Rooms from the
  * list.
@@ -9,23 +9,23 @@ import java.util.ArrayList;
 public class RoomManager {
     private ArrayList<Room> rooms = new ArrayList<>();
 
-    
-    /** 
+
+    /**
      * @param room
      */
     public void addRoom(Room room){
         rooms.add(room);
     }
-    
-    /** 
+
+    /**
      * @param room
      */
     public void removeRoom(Room room){
         rooms.remove(room);
     }
 
-    
-    /** 
+
+    /**
      * @param room
      * @return int
      */
