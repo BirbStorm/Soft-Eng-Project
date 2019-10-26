@@ -47,7 +47,7 @@ class ReceptionistTest {
         // Setup
 
         // Run the test
-        receptionistUnderTest.assignRoom(r);
+        //receptionistUnderTest.assignRoom(r);
 
         // Verify the results
 
