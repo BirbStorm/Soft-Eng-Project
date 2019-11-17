@@ -16,35 +16,12 @@ public class Doctor extends Nurse{
         this.doctor = doctor;
     }
 
-    /**
-     * @param appointment
-     */
-    public void getAppointment(Appointment appointment) {
-        this.appointment = appointment;
-    }
 
-    
-    /** 
-     * @return Room
-     */
-    public Room getRoomNumber() {
-        return appointment.getRoom();
-    }
-
-    
     /** 
      * @return Nurse
      */
     public Nurse getNurse() {
         return appointment.getAssignedNurse();
-    }
-
-    
-    /** 
-     * @return Patient
-     */
-    public Patient getPatient() {
-        return appointment.getPatient();
     }
 
     

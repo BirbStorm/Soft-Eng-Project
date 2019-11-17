@@ -2,24 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be1dc886-212f-4079-aad8-73eeb034beec" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/AppointmentTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/Tests/AppointmentTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/DoctorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/Tests/DoctorTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/PatientManagerTester.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/Tests/PatientManagerTester.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/ReceptionistTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/Tests/ReceptionistTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/RoomManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/Tests/RoomManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Appointment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/Appointment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/AppointmentManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/AppointmentManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/Doctor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/DoctorManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/DoctorManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Nurse.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/Nurse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/Patient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/PatientManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/PatientManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Receptionist.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/Receptionist.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/RoomManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Sprint2/project/RoomManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Patient.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

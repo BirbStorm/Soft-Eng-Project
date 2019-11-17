@@ -61,37 +61,6 @@ public class Patient {
         am.removeAppointment(appointment);
     }
 
-    
-    /** 
-     * @return String
-     */
-    public String getFirstName() {
-        return p.firstName;
-    }
-
-    
-    /** 
-     * @param firstName
-     */
-    public void setFirstName(String firstName) {
-        this.p.firstName = firstName;
-    }
-
-    
-    /** 
-     * @return String
-     */
-    public String getLastName() {
-        return p.lastName;
-    }
-
-    
-    /** 
-     * @param lastName
-     */
-    public void setLastName(String lastName) {
-        this.p.lastName = lastName;
-    }
 
     
     /** 

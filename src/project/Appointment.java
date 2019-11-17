@@ -7,7 +7,6 @@ public class Appointment {
 
     private Date appointmentDayTime;
     private Doctor assignedDoc;
-    private Nurse assignedNurse;
     private Patient patient;
     private String reason;
     private Room room;
@@ -106,22 +105,6 @@ public class Appointment {
      */
     public void setPatient(Patient patient) {
         this.patient = patient;
-    }
-
-    
-    /** 
-     * @return Nurse
-     */
-    public Nurse getAssignedNurse() {
-        return assignedNurse;
-    }
-
-    
-    /** 
-     * @param assignedNurse
-     */
-    public void setAssignedNurse(Nurse assignedNurse) {
-        this.assignedNurse = assignedNurse;
     }
 
     
