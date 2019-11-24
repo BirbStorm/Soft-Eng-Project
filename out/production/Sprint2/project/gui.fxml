@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
 <?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.chart.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="503.0" prefWidth="757.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="503.0" prefWidth="757.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
   <tabs>
     <Tab text="Admin">
       <content>
@@ -124,7 +121,7 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
                   <Label layoutX="20.0" layoutY="28.0" text="Last Name" />
-                  <TextField layoutX="20.0" layoutY="59.0" />
+                  <TextField fx:id="PLName_txtBox" layoutX="20.0" layoutY="59.0" />
                   <Label layoutX="197.0" layoutY="28.0" text="First Name" />
                   <TextField layoutX="197.0" layoutY="59.0" />
                   <Button layoutX="387.0" layoutY="59.0" mnemonicParsing="false" text="Check Appointment" />
