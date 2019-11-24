@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be1dc886-212f-4079-aad8-73eeb034beec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/project/gui.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sprint2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sprint2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/AppointmentTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/DoctorTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/PatientManagerTester.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/ReceptionistTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/RoomManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Appointment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/AppointmentManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Doctor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/DoctorManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Nurse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Patient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/PatientManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Person.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Receptionist.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/Room.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/project/RoomManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui.fxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +58,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Whole project">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Sprint2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppointmentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint2" />
       <extension name="coverage">
@@ -109,6 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AppointmentTest" />
         <item itemvalue="JUnit.AppointmentTest" />
       </list>
     </recent_temporary>

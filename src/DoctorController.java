@@ -1,16 +1,6 @@
-package Controllers;
 
 import javafx.fxml.FXML;
-import javafx.collections.*;
-import javafx.event.ActionEvent;
-import javafx.scene.control.*;
-
-import javafx.scene.input.MouseEvent;
-import javafx.util.Callback;
-import javafx.event.EventHandler;
-
-import java.sql.*;
-import java.util.*;
+import javafx.scene.control.TextArea;
 
 public class DoctorController{
     @FXML private TextArea patientName;
