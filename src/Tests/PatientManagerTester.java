@@ -2,9 +2,9 @@ package Tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import project.Patient;
-import project.PatientManager;
-import project.Person;
+import appointments.Patient;
+import appointments.PatientManager;
+import appointments.Person;
 
 public class PatientManagerTester{
     @Test

@@ -1,6 +1,6 @@
 package Tests;
 
-import project.Room;
+import appointments.Room;
 
 import java.util.ArrayList;
 /**

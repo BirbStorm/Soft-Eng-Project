@@ -1,4 +1,4 @@
-package project;
+package appointments;
 /**
  * A class to keep track of Rooms.  Rooms have
  * numbers to identify them and Nurses are assigned

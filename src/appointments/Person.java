@@ -1,4 +1,4 @@
-package project;
+package appointments;
 /** 
  * A class to define what a Person is.  Doctor, Nurse,
  * Patient, and Receptionist are Persons.
