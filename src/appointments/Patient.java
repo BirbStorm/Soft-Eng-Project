@@ -1,4 +1,4 @@
-package project;
+package appointments;
 
 import java.util.Date;
 import java.util.ArrayList;
