@@ -12,7 +12,6 @@ public class Patient {
     private AppointmentManager am = new AppointmentManager();
     public Appointment appointment = null;
     private Person p;
-    private int SSN;
     private ArrayList<String> allPrescriptions = new ArrayList<>();
     private ArrayList<String> allTreatments = new ArrayList<>();
 
@@ -21,12 +20,10 @@ public class Patient {
     
     /** 
      * @param p
-     * @param SSN
-     * @return 
+     * @return
      */
-    public Patient(Person p, int SSN) {
+    public Patient(Person p) {
         this.p = p;
-        this.SSN = SSN;
     }
 
     
@@ -93,13 +90,6 @@ public class Patient {
         this.p.lastName = lastName;
     }
 
-    
-    /** 
-     * @return int
-     */
-    public int getSSN() {
-        return SSN;
-    }
 
     
     /** 

@@ -5,9 +5,17 @@ package appointments;
  */
 public class Person {
     public String firstName, lastName;
+    public int SSN;
 
-    
-    /** 
+    public int getSSN() {
+        return SSN;
+    }
+
+    public void setSSN(int SSN) {
+        this.SSN = SSN;
+    }
+
+    /**
      * @return String
      */
     public String getFirstName() {
@@ -44,7 +52,7 @@ public class Person {
      * @param lastName
      * @return 
      */
-    public Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName, int SSN) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
