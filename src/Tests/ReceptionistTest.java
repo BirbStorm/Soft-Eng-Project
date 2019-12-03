@@ -15,7 +15,7 @@ class ReceptionistTest {
 
     @BeforeEach
     void setUp() {
-        person = new Person("allo", "vera");
+        person = new Person("allo", "vera", 23678512);
         receptionistUnderTest = new Receptionist(person);
         Doctor d = null;
         Nurse n = null;

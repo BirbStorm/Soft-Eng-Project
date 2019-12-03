@@ -1,22 +1,21 @@
 package Tests;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import appointments.Appointment;
 import appointments.AppointmentManager;
 import appointments.Patient;
 import appointments.Person;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.GregorianCalendar;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class AppointmentTest extends AppointmentManager {
 
-    private Patient mockPatient = new Patient(new Person("John", "doe"), 8675309);
+    private Patient mockPatient = new Patient(new Person("John", "doe", 8675309));
     private Appointment appointmentUnderTest;
 
     @BeforeEach
