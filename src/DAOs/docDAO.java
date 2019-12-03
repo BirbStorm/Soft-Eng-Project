@@ -1,7 +1,7 @@
 package DAOs;
 
 import Util.DBUtil;
-import appointments.Patient;
+import appointments.Doctor;
 import appointments.Person;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,13 +9,13 @@ import javafx.collections.ObservableList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class patientDAO {
+public class docDAO {
 
     //*******************************
     //SELECT an Employee
     //*******************************
-    public static Patient searchPatient (String pSSN) throws SQLException, ClassNotFoundException {
-        String selectStmt = "SELECT * FROM PATIENT WHERE SSN = "+pSSN;
+    public static Doctor searchDoctor (String dSSN) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * FROM Doctor WHERE SSN = "+dSSN;
 
         //Execute SELECT statement
         try {
@@ -23,42 +23,42 @@ public class patientDAO {
             ResultSet rsEmp = DBUtil.executeQuery(selectStmt);
 
             //Send ResultSet to the getEmployeeFromResultSet method and get employee object
-            Patient patient = getPatientFromRS(rsEmp);
+            Doctor Doctor = getDoctorFromRS(rsEmp);
 
-            return patient;
+            return Doctor;
         } catch (SQLException e) {
-            System.out.println("While searching for a Patient with " + pSSN + " id, an error occurred: " + e);
+            System.out.println("While searching for a Doctor with " + dSSN + " id, an error occurred: " + e);
             throw e;
         }
     }
 
     //Use ResultSet from DB as parameter and set Employee Object's attributes and return employee object.
-    private static Patient getPatientFromRS(ResultSet rs) throws SQLException
+    private static Doctor getDoctorFromRS(ResultSet rs) throws SQLException
     {
-        Patient pat = null;
+        Doctor doc = null;
         if (rs.next()) {
-            pat = new Patient(new Person(rs.getString("firstName"),
-                                         rs.getString("lastName"), rs.getInt("SSN")));
+            doc = new Doctor(new Person(rs.getString("firstName"),
+                    rs.getString("lastName"), rs.getInt("SSN")));
         }
-        return pat;
+        return doc;
     }
 
     //*******************************
-    //SELECT Patients
+    //SELECT Doctors
     //*******************************
-    public static ObservableList<Patient> searchPatients () throws SQLException, ClassNotFoundException {
+    public static ObservableList<Doctor> searchDoctors () throws SQLException, ClassNotFoundException {
         //Declare a SELECT statement
-        String selectStmt = "SELECT * FROM PATIENT";
+        String selectStmt = "SELECT * FROM Doctor";
 
         //Execute SELECT statement
         try {
             //Get ResultSet from dbExecuteQuery method
             ResultSet rs = DBUtil.executeQuery(selectStmt);
 
-            ObservableList<Patient> patList = getPatientList(rs);
+            ObservableList<Doctor> docList = getDoctorList(rs);
 
             //Return employee object
-            return patList;
+            return docList;
         } catch (SQLException e) {
             System.out.println("SQL select operation has been failed: " + e);
             //Return exception
@@ -66,27 +66,27 @@ public class patientDAO {
         }
     }
 
-    //Select * from patient operation
-    private static ObservableList<Patient> getPatientList(ResultSet rs) throws SQLException, ClassNotFoundException {
-        //Declare a observable List which comprises of patient objects
-        ObservableList<Patient> patients = FXCollections.observableArrayList();
+    //Select * from Doctor operation
+    private static ObservableList<Doctor> getDoctorList(ResultSet rs) throws SQLException, ClassNotFoundException {
+        //Declare a observable List which comprises of Doctor objects
+        ObservableList<Doctor> Doctors = FXCollections.observableArrayList();
 
         while (rs.next()) {
-            Patient pat = new Patient(new Person(rs.getString("firstName"),
+            Doctor doc = new Doctor(new Person(rs.getString("firstName"),
                     rs.getString("lastName"), rs.getInt("SSN")));
-            //Add patient to the ObservableList
-            patients.add(pat);
+            //Add Doctor to the ObservableList
+            Doctors.add(doc);
         }
-        //return patients (ObservableList of patients)
-        return patients;
+        //return Doctors (ObservableList of Doctors)
+        return Doctors;
     }
 
     //*************************************
-    //UPDATE an patient's Name
+    //UPDATE an Doctor's Name
     //*************************************
     public static void updateFirstName (String SSN, String name) throws SQLException, ClassNotFoundException {
         //Declare a UPDATE statement
-        String updateStmt ="UPDATE PATIENT\n" + " SET firstName = '" + name + "  WHERE SSN = " + SSN + ";";
+        String updateStmt ="UPDATE Doctor\n" + " SET firstName = '" + name + "  WHERE SSN = " + SSN + ";";
 
         //Execute UPDATE operation
         try {
@@ -98,7 +98,7 @@ public class patientDAO {
     }
     public static void updateLastName (String SSN, String name) throws SQLException, ClassNotFoundException {
         //Declare a UPDATE statement
-        String updateStmt ="UPDATE PATIENT\n" + " SET lastName = '" + name + "  WHERE SSN = " + SSN + ";";
+        String updateStmt ="UPDATE Doctor\n" + " SET lastName = '" + name + "  WHERE SSN = " + SSN + ";";
 
         //Execute UPDATE operation
         try {
