@@ -122,4 +122,8 @@ public class Patient {
     public void payReceipt(Appointment a){
         a.receipt = 0;
     }
+
+    public int getSSN() {
+        return p.getSSN();
+    }
 }
