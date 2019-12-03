@@ -2,131 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be1dc886-212f-4079-aad8-73eeb034beec" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/project/controller/DoctorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/AppointmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/AppointmentTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/DoctorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/DoctorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/PatientManagerTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/PatientManagerTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tests/ReceptionistTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tests/ReceptionistTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appointments/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/appointments/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sprint2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Sprint2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/DBUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/DoctorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/META-INF/Sprint2.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/AppointmentTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/DoctorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/PatientManagerTester.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/ReceptionistTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/Tests/RoomManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/Appointment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/AppointmentManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/Doctor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/DoctorManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/Nurse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/Patient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/PatientManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/Person.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/Receptionist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/Room.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/RoomManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/appointments/gui.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Sprint2/gui.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAOs/apptDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/apptDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAOs/docDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/docDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAOs/nurseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/nurseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAOs/patientDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/patientDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/controller/NurseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/AppointmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Tests/AppointmentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/DoctorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Tests/DoctorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/PatientManagerTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Tests/PatientManagerTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/ReceptionistTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Tests/ReceptionistTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tests/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Tests/RoomManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Util/DBUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/Util/DBUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/AppointmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/AppointmentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/DoctorManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/DoctorManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/Nurse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/Nurse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/PatientManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/PatientManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/Receptionist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/Receptionist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/appointments/RoomManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/model/RoomManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/view/gui.fxml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
-  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DAOs/patientDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="22" selection-end-line="112" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DAOs/nurseDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="62" column="64" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DAOs/docDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DAOs/apptDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/appointments/PatientManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="83">
-              <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tests/PatientManagerTester.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/appointments/Patient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="126" column="26" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
-              <folding>
-                <element signature="e#2728#2729#0" expanded="true" />
-                <element signature="e#2749#2750#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tests/DoctorTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tests/ReceptionistTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-396">
-              <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Tests/AppointmentTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="17" column="81" selection-start-line="17" selection-start-column="81" selection-end-line="17" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -148,22 +81,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/DAOs/patientDAO.java" />
-        <option value="$PROJECT_DIR$/src/DAOs/nurseDAO.java" />
-        <option value="$PROJECT_DIR$/src/DAOs/docDAO.java" />
-        <option value="$PROJECT_DIR$/src/DAOs/apptDAO.java" />
-        <option value="$PROJECT_DIR$/src/appointments/PatientManager.java" />
-        <option value="$PROJECT_DIR$/src/Tests/PatientManagerTester.java" />
-        <option value="$PROJECT_DIR$/src/appointments/Patient.java" />
-        <option value="$PROJECT_DIR$/src/Tests/DoctorTest.java" />
-        <option value="$PROJECT_DIR$/src/Tests/ReceptionistTest.java" />
-        <option value="$PROJECT_DIR$/src/Tests/AppointmentTest.java" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1911" />
     <option name="width" value="1940" />
@@ -171,53 +88,10 @@
   </component>
   <component name="ProjectId" id="1SkqJbgIkJFOHwm42GfZyTlXEz7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Sprint 2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sprint 2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sprint 2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sprint 2" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sprint 2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sprint 2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sprint 2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sprint 2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="appointments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sprint 2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sprint 2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="DAOs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sprint 2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sprint 2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="true" />
@@ -227,36 +101,26 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="C:/Program Files/javafx-sdk-11.0.2/lib" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.20117474" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joldf\workspace\software\Team-1-Fall-19\src\view" />
+      <recent name="C:\Users\Northcutt\Desktop\school\CS\engineering\project\New folder\src\project" />
+      <recent name="$PROJECT_DIR$/src/project" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Tests" />
       <recent name="$PROJECT_DIR$/src/project" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Northcutt\Desktop\school\CS\engineering\project\New folder\src\project" />
-      <recent name="$PROJECT_DIR$/src/project" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="project.Main" />
       <module name="Sprint2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -266,12 +130,12 @@
       <module name="Sprint2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Tests.*" />
+          <option name="PATTERN" value="project.model.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
-      <option name="MAIN_CLASS_NAME" value="Tests.AppointmentTest" />
+      <option name="PACKAGE_NAME" value="project.model.Tests" />
+      <option name="MAIN_CLASS_NAME" value="project.model.Tests.AppointmentTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -280,11 +144,11 @@
     <configuration name="Whole project" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Tests.*" />
+          <option name="PATTERN" value="project.model.Tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="PACKAGE_NAME" value="project.model.Tests" />
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -303,6 +167,18 @@
         <item itemvalue="JUnit.AppointmentTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -331,42 +207,6 @@
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="3255000" />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="1274" y="0" width="1293" height="707" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25019547" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info id="Learn" order="7" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3300153" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.33110368" />
-      <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Theme Preview" order="8" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -376,12 +216,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -407,249 +241,34 @@
     <MESSAGE value="added appt, doc, nurse DAO and pasic SELECT and UPDATE for them all" />
     <option name="LAST_COMMIT_MESSAGE" value="added appt, doc, nurse DAO and pasic SELECT and UPDATE for them all" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1443">
-          <caret line="155" column="14" selection-start-line="155" selection-start-column="14" selection-end-line="155" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/RoomManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appointments/RoomManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sprint2.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/mysql_mysql_connector_java_8_0_18.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOs/patientDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="22" selection-end-line="112" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOs/nurseDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="62" column="64" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOs/docDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOs/apptDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="41" column="35" lean-forward="true" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appointments/Doctor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
-          <folding>
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#428#429#0" expanded="true" />
-            <element signature="e#505#506#0" expanded="true" />
-            <element signature="e#549#550#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appointments/Nurse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="63" column="56" selection-start-line="63" selection-start-column="56" selection-end-line="63" selection-end-column="56" />
-          <folding>
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#652#653#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#781#782#0" expanded="true" />
-            <element signature="e#861#862#0" expanded="true" />
-            <element signature="e#908#909#0" expanded="true" />
-            <element signature="e#1119#1120#0" expanded="true" />
-            <element signature="e#1170#1171#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1439#1440#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/PatientManagerTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appointments/PatientManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="83">
-          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appointments/Patient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="126" column="26" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
-          <folding>
-            <element signature="e#2728#2729#0" expanded="true" />
-            <element signature="e#2749#2750#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appointments/Room.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-          <folding>
-            <element signature="e#502#503#0" expanded="true" />
-            <element signature="e#530#531#0" expanded="true" />
-            <element signature="e#608#609#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/DoctorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/appointments/Appointment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="181" column="19" selection-start-line="181" selection-start-column="19" selection-end-line="181" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/ReceptionistTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Tests/AppointmentTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="17" column="81" selection-start-line="17" selection-start-column="81" selection-end-line="17" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>mysql-connector-java-8.0</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.20117474" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>IntelliJ IDEA IU-191.6183.87</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.20117474" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>Sprint2</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.20117474" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>mysql:mysql-connector-java:8.0.18</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.20117474" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="WindowStateProjectService">
+    <state x="566" y="301" width="403" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1575403068193">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="566" y="301" width="403" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1575403068193" />
+    <state x="577" y="171" key="FileChooserDialogImpl" timestamp="1575404632442">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="577" y="171" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1575404632442" />
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1575405217966">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1575405217966" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1575405217966">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1575405217966" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1575405217966">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1575405217966" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1575405217966">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1575405217966" />
+    <state x="277" y="0" key="SettingsEditor" timestamp="1575404635862">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="277" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1575404635862" />
   </component>
 </project>
