@@ -46,7 +46,7 @@ public class nurseDAO {
     //*******************************
     //SELECT Patients
     //*******************************
-    public static ObservableList<Nurse> searchNurse() throws SQLException, ClassNotFoundException {
+    public static ResultSet searchNurse() throws SQLException, ClassNotFoundException {
         //Declare a SELECT statement
         String selectStmt = "SELECT * FROM NURSE";
 
@@ -55,10 +55,10 @@ public class nurseDAO {
             //Get ResultSet from dbExecuteQuery method
             ResultSet rs = DBUtil.executeQuery(selectStmt);
 
-            ObservableList<Nurse> nurseList = getNurseList(rs);
+//            ObservableList<Nurse> nurseList = getNurseList(rs);
 
             //Return employee object
-            return nurseList;
+            return rs;
         } catch (SQLException e) {
             System.out.println("SQL select operation has been failed: " + e);
             //Return exception

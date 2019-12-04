@@ -46,19 +46,19 @@ public class docDAO {
     //*******************************
     //SELECT Doctors
     //*******************************
-    public static ObservableList<Doctor> searchDoctors () throws SQLException, ClassNotFoundException {
+    public static ResultSet searchDoctors () throws SQLException, ClassNotFoundException {
         //Declare a SELECT statement
-        String selectStmt = "SELECT * FROM Doctor";
+        String selectStmt = "SELECT * FROM DOCTOR";
 
         //Execute SELECT statement
         try {
             //Get ResultSet from dbExecuteQuery method
             ResultSet rs = DBUtil.executeQuery(selectStmt);
 
-            ObservableList<Doctor> docList = getDoctorList(rs);
+//            ObservableList<Doctor> docList = getDoctorList(rs);
 
             //Return employee object
-            return docList;
+            return rs;
         } catch (SQLException e) {
             System.out.println("SQL select operation has been failed: " + e);
             //Return exception

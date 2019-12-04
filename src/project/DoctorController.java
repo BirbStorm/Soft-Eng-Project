@@ -58,6 +58,26 @@ public class DoctorController {
             throw e;
         }
     }
+    @FXML
+    private void allDoctors(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+        try{
+            ResultSet rs = docDAO.searchDoctors();
+            updateTable(recTable, rs);
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
+    }
+    @FXML
+    private void allNurses(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+        try{
+            ResultSet rs = nurseDAO.searchNurse();
+            updateTable(recTable, rs);
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
+    }
 //    @FXML protected void tableClick(MouseEvent event) throws SQLException, ClassNotFoundException {
 //        String text = table.getColumns().get(0).getText();
 //        if(event.getClickCount() > 1 && !((text.equals("Num_Movies") || (text.equals("directorName")|| (text.equals("actorName")))))) {

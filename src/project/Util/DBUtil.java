@@ -5,8 +5,8 @@ import java.sql.*;
 public class DBUtil {
 
     public static Connection setConnection() throws SQLException, ClassNotFoundException {
-//        Class.forName("com.mysql.cj.jdbc.Driver");
-        return DriverManager.getConnection("mysql://doadmin:mw81pbjyw96uiaar@" +
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        return DriverManager.getConnection("jdbc:mysql://doadmin:mw81pbjyw96uiaar@" +
                 "db-appointments-do-user-6714215-0.db.ondigitalocean.com:" +
                 "25060/appointments?ssl-mode=REQUIRED");
     }
@@ -26,17 +26,6 @@ public class DBUtil {
         } catch (SQLException e) {
             System.out.println("Problem occurred at executeQuery operation : " + e);
             throw e;
-        } finally {
-            if (rs != null) {
-                //Close resultSet
-                rs.close();
-            }
-            if (stmt != null) {
-                //Close Statement
-                stmt.close();
-            }
-            //Close connection
-            conn.close();
         }
         return rs;
     }

@@ -53,12 +53,11 @@ public class patientDAO {
         //Execute SELECT statement
         try {
             //Get ResultSet from dbExecuteQuery method
-            ResultSet rs = DBUtil.executeQuery(selectStmt);
 
-            ObservableList<Patient> patList = getPatientList(rs);
+            //ObservableList<Patient> patList = getPatientList(rs);
 
             //Return employee object
-            return rs;
+            return DBUtil.executeQuery(selectStmt);
         } catch (SQLException e) {
             System.out.println("SQL select operation has been failed: " + e);
             //Return exception
