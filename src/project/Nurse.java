@@ -13,6 +13,7 @@ public class Nurse {
     private boolean administeredTreatment = false;
 
     public Nurse(){ }
+
     public Nurse(Person nurse) {
         this.nurse = nurse;
     }

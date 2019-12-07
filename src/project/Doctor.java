@@ -22,7 +22,9 @@ public class Doctor extends Nurse{
     public void getAppointment(Appointment appointment) {
         this.appointment = appointment;
     }
-
+    public void makeDiagnosis(String diagnosis) {
+        appointment.setDiagnosis(diagnosis);
+    }
     
     /** 
      * @return Room
@@ -57,7 +59,7 @@ public class Doctor extends Nurse{
 
     
     /** 
-     * Doctor can presribe medicine to a Patient based
+     * Doctor can prescribe medicine to a Patient based
      * on the Patient's diagnosis. 
      * 
      * @param medication
@@ -69,7 +71,7 @@ public class Doctor extends Nurse{
     
     /** 
      * Doctor needs to review a Patient's history of prescribed
-     * mediction for the Appointment. 
+     * medication for the Appointment.
      * 
      * @return ArrayList<String>
      */
