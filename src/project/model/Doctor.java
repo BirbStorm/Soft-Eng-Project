@@ -7,7 +7,6 @@ public class Doctor extends Nurse{
     private Person doctor;
     private Appointment appointment;
 
-    
     /** 
      * @param doctor
      * @return 
@@ -23,7 +22,6 @@ public class Doctor extends Nurse{
         this.appointment = appointment;
     }
 
-    
     /** 
      * @return Room
      */
@@ -31,7 +29,6 @@ public class Doctor extends Nurse{
         return appointment.getRoom();
     }
 
-    
     /** 
      * @return Nurse
      */
@@ -39,7 +36,6 @@ public class Doctor extends Nurse{
         return appointment.getAssignedNurse();
     }
 
-    
     /** 
      * @return Patient
      */
@@ -47,7 +43,6 @@ public class Doctor extends Nurse{
         return appointment.getPatient();
     }
 
-    
     /** 
      * @return String
      */
@@ -66,7 +61,6 @@ public class Doctor extends Nurse{
         appointment.addMedication(medication);
     }
 
-    
     /** 
      * Doctor needs to review a Patient's history of prescribed
      * mediction for the Appointment. 
@@ -77,7 +71,6 @@ public class Doctor extends Nurse{
         return appointment.getPrescribedMedication();
     }
 
-    
     /** 
      * Doctor needs to review a Patient's history of treatments 
      * for the Appointment. 
@@ -87,5 +80,4 @@ public class Doctor extends Nurse{
     public ArrayList<String> getAdministeredTreatments() {
         return appointment.getAdministeredTreatments();
     }
-
 }
