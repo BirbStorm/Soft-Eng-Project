@@ -1,10 +1,8 @@
 package project.model;
 
-import project.Util.DBUtil;
-import project.model.Nurse;
-import project.model.Person;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import project.Util.DBUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -105,6 +103,18 @@ public class nurseDAO {
             DBUtil.dbExecuteUpdate(updateStmt);
         } catch (SQLException e) {
             System.out.print("Error occurred while UPDATE Operation: " + e);
+            throw e;
+        }
+    }
+
+    //Admin methods
+    public static void addNurse (String FName, String LName, String SSN) throws SQLException, ClassNotFoundException{
+        String add = "INSERT INTO NURSE (SSN, firstName, lastName) VALUES (" + SSN + ", '" + FName + "', '" + LName + "');";
+
+        try {
+            DBUtil.dbExecuteUpdate(add);
+        } catch (SQLException e) {
+            System.out.print("Error occured while INSERT Operation: " + e);
             throw e;
         }
     }

@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.collections.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="project.DoctorController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.DoctorController">
   <children>
     <TabPane layoutX="0.0" layoutY="0.0" prefHeight="720.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
       <tabs>
@@ -16,19 +14,22 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="firstName" layoutX="14.0" layoutY="47.0" prefWidth="200.0" promptText="First Name" />
-                <TextField fx:id="lastName" layoutX="14.0" layoutY="99.0" prefWidth="200.0" promptText="Last Name" />
-                <TextField fx:id="ssn" layoutX="14.0" layoutY="155.0" prefWidth="200.0" promptText="Social Security Number" />
+                <TextField fx:id="AdminTxtFName" layoutX="14.0" layoutY="47.0" prefWidth="200.0" promptText="First Name" />
+                <TextField fx:id="AdminTxtLName" layoutX="14.0" layoutY="99.0" prefWidth="200.0" promptText="Last Name" />
+                <TextField fx:id="AdminTxtSSN" layoutX="14.0" layoutY="155.0" prefWidth="200.0" promptText="Social Security Number" />
                 <Text fx:id="errorSSN" fill="#cc0000" layoutX="252.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please only use numbers" visible="true">
                   <font>
                     <Font size="22.0" fx:id="x1" />
                   </font>
                 </Text>
-                <RadioButton fx:id="docRB" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" text="Doctor" />
-                <RadioButton fx:id="nurseRB" layoutX="169.0" layoutY="230.0" mnemonicParsing="false" text="Nurse" />
-                <Button fx:id="addDoc" layoutX="14.0" layoutY="305.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add" />
-                <TextField fx:id="roomField" layoutX="540.0" layoutY="47.0" prefWidth="200.0" promptText="Room Number" />
-                <ChoiceBox fx:id="nurseChoice" layoutX="540.0" layoutY="99.0" prefWidth="200.0">
+                <RadioButton fx:id="AdminDocRB" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" selected="true" text="Doctor">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="AdminNurseNDoc" />
+                           </toggleGroup></RadioButton>
+                <RadioButton fx:id="AdminNurseRB" layoutX="169.0" layoutY="230.0" mnemonicParsing="false" selected="false" text="Nurse" toggleGroup="$AdminNurseNDoc" />
+                <Button fx:id="AdminAddNurseNDoc" layoutX="14.0" layoutY="305.0" minHeight="30.0" mnemonicParsing="false" onAction="#AddNurseNDoc" prefHeight="30.0" prefWidth="200.0" text="Add" />
+                <TextField fx:id="AdminRoomField" layoutX="540.0" layoutY="47.0" prefWidth="200.0" promptText="Room Number" />
+                <ChoiceBox fx:id="AdminNurseChoice" layoutX="540.0" layoutY="99.0" prefWidth="200.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
@@ -37,7 +38,7 @@
                     </FXCollections>
                   </items>
                 </ChoiceBox>
-                <Button fx:id="addRoom" layoutX="582.0" layoutY="161.0" mnemonicParsing="false" text="Add Room" />
+                <Button fx:id="AdminAddRoom" layoutX="582.0" layoutY="161.0" mnemonicParsing="false" text="Add Room" />
               </children>
             </AnchorPane>
           </content>
