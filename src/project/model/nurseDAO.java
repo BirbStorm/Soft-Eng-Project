@@ -119,5 +119,16 @@ public class nurseDAO {
         }
     }
 
+    public static void removeNurse (String FName, String LName, String SSN) throws SQLException, ClassNotFoundException{
+        String remove = "DELETE FROM NURSE WHERE SSN = '" + SSN + "';";
+
+        try {
+            DBUtil.dbExecuteUpdate(remove);
+        } catch (SQLException e) {
+            System.out.print("Error occured while DELETE Operation: " + e);
+            throw e;
+        }
+    }
+
 
 }
