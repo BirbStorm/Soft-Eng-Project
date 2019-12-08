@@ -12,6 +12,8 @@ import project.model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class DoctorController {
     //Admin info
@@ -28,9 +30,20 @@ public class DoctorController {
     @FXML private TextArea medicine;
 
     @FXML private ChoiceBox docPrecriptionChoice;
+    @FXML private ChoiceBox docChoice;
 
     @FXML private TableView<ObservableList<String>> recTable, docTable, nurseTable, patTable;
     @FXML private TableColumn<ObservableList<String>, String> column;
+
+    @FXML
+    private void initialize() throws SQLException, ClassNotFoundException {
+        try{
+            fillDoctorChoice();
+            fillPrescriptionChoice();
+        }catch (SQLException | ClassNotFoundException e){
+            throw e;
+        }
+    }
 
     //Admin Tab
     @FXML private void AddNurseNDoc(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
@@ -83,7 +96,7 @@ public class DoctorController {
 
 
 
-    //Receptionist Tab
+    //Receptionist Tab *********************************************************************************************
     @FXML private void updateTable(TableView<ObservableList<String>> table, ResultSet rs)throws SQLException {
         table.getColumns().clear();
         table.getItems().clear();
@@ -139,17 +152,6 @@ public class DoctorController {
         }
     }
 
-    @FXML
-    private void fillPrescriptionChoice(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
-        try{
-            ObservableList<String> prescriptionList = apptDAO.getPrescriptionList();
-            docPrecriptionChoice.getItems().addAll(prescriptionList);
-        }catch (SQLException e){
-            System.out.println("Error occurred while getting employees information from DB.\n" + e);
-            throw e;
-        }
-    }
-
 //    @FXML protected void tableClick(MouseEvent event) throws SQLException, ClassNotFoundException {
 //        String text = table.getColumns().get(0).getText();
 //        if(event.getClickCount() > 1 && !((text.equals("Num_Movies") || (text.equals("directorName")|| (text.equals("actorName")))))) {
@@ -159,8 +161,42 @@ public class DoctorController {
 //        }
 //    }
 
-    //Doctor Tab
-    @FXML private void docTable (ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+    // DOCTOR TAB ****************************************************************************************
+    // @FXML private void docTable (ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+    //     try{
+    //         ResultSet rs = docDAO.searchPatients();
+    //         updateTable(docTable, rs);
+    //     }catch (SQLException e){
+    //         System.out.println("Error occurred while getting employees information from DB.\n" + e);
+    //         throw e;
+    //     }
+    // }
+    
+    @FXML
+    private void fillDoctorChoice() throws SQLException, ClassNotFoundException{
+        ArrayList<String> names = new ArrayList<String>();
 
+        try{
+            ResultSet rs = docDAO.searchDoctors();
+            while (rs.next()) { 
+                names.add(rs.getString("lastName"));
+            }
+            ObservableList<String> obNames = FXCollections.observableArrayList(names);
+            docChoice.setItems(obNames);
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
+    }
+
+    @FXML
+    private void fillPrescriptionChoice() throws SQLException, ClassNotFoundException{
+        try{
+            ObservableList<String> prescriptionList = apptDAO.getPrescriptionList();
+            docPrecriptionChoice.setItems(prescriptionList);
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
     }
 }
