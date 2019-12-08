@@ -1,10 +1,8 @@
 package project.model;
 
-import project.Util.DBUtil;
-import project.model.Patient;
-import project.model.Person;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import project.Util.DBUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -85,7 +83,7 @@ public class patientDAO {
     //*************************************
     public static void updateFirstName (String SSN, String name) throws SQLException, ClassNotFoundException {
         //Declare a UPDATE statement
-        String updateStmt ="UPDATE PATIENT\n" + " SET firstName = '" + name + "  WHERE SSN = " + SSN + ";";
+        String updateStmt ="UPDATE PATIENT\n" + " SET firstName = '" + name + "'  WHERE SSN = " + SSN + ";";
 
         //Execute UPDATE operation
         try {
@@ -97,7 +95,7 @@ public class patientDAO {
     }
     public static void updateLastName (String SSN, String name) throws SQLException, ClassNotFoundException {
         //Declare a UPDATE statement
-        String updateStmt ="UPDATE PATIENT\n" + " SET lastName = '" + name + "  WHERE SSN = " + SSN + ";";
+        String updateStmt ="UPDATE PATIENT\n" + " SET lastName = '" + name + "'  WHERE SSN = " + SSN + ";";
 
         //Execute UPDATE operation
         try {
@@ -108,5 +106,35 @@ public class patientDAO {
         }
     }
 
+    public static void deletePatient (Integer SSN) throws SQLException, ClassNotFoundException {
+        String delete = "DELETE FROM PATIENT WHERE SSN = " + SSN +";";
+
+        try {
+            DBUtil.dbExecuteUpdate(delete);
+        } catch (SQLException e) {
+            System.out.print("Error occured while DELETE Operation: " + e);
+            throw e;
+        }
+    }
+
+    public static  void addPatient (Integer SSN, String FName, String LName) throws SQLException, ClassNotFoundException{
+        String add = "INSERT INTO PATIENT (SSN, firstName, lastName) VALUES (" + SSN + ", '" + FName + "','" + LName + "');";
+
+        try {
+            DBUtil.dbExecuteUpdate(add);
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public static void assignDoc2Pat (Integer docSSN, Integer patSSN) throws SQLException, ClassNotFoundException{
+        String assign = "UPDATE PATIENT " + "SET docSSN = " + docSSN + " WHERE SSN = " + patSSN + ";";
+
+        try {
+            DBUtil.dbExecuteUpdate(assign);
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
 
 }
