@@ -1,10 +1,8 @@
 package project.model;
 
-import project.Util.DBUtil;
-import project.model.Doctor;
-import project.model.Person;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import project.Util.DBUtil;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -108,6 +106,31 @@ public class docDAO {
             throw e;
         }
     }
+
+    //Admin methods
+
+    public static void addDoc (String FName, String LName, int SSN) throws SQLException, ClassNotFoundException{
+        String add = "INSERT INTO DOCTOR (SSN, firstName, lastName) VALUES (" + SSN + ", '" + FName + "', '" + LName + "');";
+
+        try {
+            DBUtil.dbExecuteUpdate(add);
+        } catch (SQLException e) {
+            System.out.print("Error occured while INSERT Operation: " + e);
+            throw e;
+        }
+    }
+
+    public static void removeDoc (String FName, String LName, int SSN) throws SQLException, ClassNotFoundException{
+        String remove = "DELETE FROM DOCTOR WHERE SSN = '" + SSN + "';";
+
+        try {
+            DBUtil.dbExecuteUpdate(remove);
+        } catch (SQLException e) {
+            System.out.print("Error occured while INSERT Operation: " + e);
+            throw e;
+        }
+    }
+
 
 
 }

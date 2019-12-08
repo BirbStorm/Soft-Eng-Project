@@ -9,10 +9,17 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 import project.model.*;
-import java.sql.*;
-import java.util.*;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class DoctorController {
+    //Admin info
+    @FXML private TextField AdminTxtFName, AdminTxtLName, AdminTxtSSN, AdminTxtRoom;
+    @FXML private RadioButton AdminDocRB, AdminNurseRB;
+    @FXML private ChoiceBox AdminNurseChoice;
+
+
     @FXML private TextArea patientName;
     @FXML private TextArea roomNumber;
     @FXML private TextArea patientInfo;
@@ -25,6 +32,58 @@ public class DoctorController {
     @FXML private TableView<ObservableList<String>> recTable, docTable, nurseTable, patTable;
     @FXML private TableColumn<ObservableList<String>, String> column;
 
+    //Admin Tab
+    @FXML private void AddNurseNDoc(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+        try{
+            if (AdminDocRB.isSelected()){
+               docDAO.addDoc(AdminTxtFName.getText(), AdminTxtLName.getText(), Integer.parseInt(AdminTxtSSN.getText()));
+            }
+            else if(AdminNurseRB.isSelected()){
+               nurseDAO.addNurse(AdminTxtFName.getText(), AdminTxtLName.getText(), AdminTxtSSN.getText());
+            }
+            else;
+        }
+        catch (SQLException e){
+            System.out.println("Error occured while making the doctor or nurse object" + e);
+        }
+    }
+
+    @FXML private void RemoveNurseNDoc(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+        try{
+            if (AdminDocRB.isSelected()){
+                docDAO.removeDoc(AdminTxtFName.getText(), AdminTxtLName.getText(), Integer.parseInt(AdminTxtSSN.getText()));
+            }
+            else if(AdminNurseRB.isSelected()){
+                nurseDAO.removeNurse(AdminTxtFName.getText(), AdminTxtLName.getText(), AdminTxtSSN.getText());
+            }
+            else;
+        }
+        catch (SQLException e){
+            System.out.println("Error occured while making the doctor or nurse object" + e);
+        }
+    }
+
+    @FXML private void btnAddRoom(ActionEvent actionEvent) throws  SQLException, ClassNotFoundException{
+        try{
+            roomDAO.addRoom(Integer.parseInt(AdminTxtRoom.getText()), ((Person)AdminNurseChoice.getSelectionModel().getSelectedItem()).getSSN());
+        }
+        catch (SQLException e){
+            System.out.println(("Error while making room" + e));
+        }
+    }
+
+    @FXML private void btnRemoveRoom(ActionEvent actionEvent) throws  SQLException, ClassNotFoundException{
+        try{
+            roomDAO.removeRoom(Integer.parseInt(AdminTxtRoom.getText()), ((Person)AdminNurseChoice.getSelectionModel().getSelectedItem()).getSSN());
+        }
+        catch (SQLException e){
+            System.out.println(("Error while making room" + e));
+        }
+    }
+
+
+
+    //Receptionist Tab
     @FXML private void updateTable(TableView<ObservableList<String>> table, ResultSet rs)throws SQLException {
         table.getColumns().clear();
         table.getItems().clear();
@@ -99,4 +158,9 @@ public class DoctorController {
 //            tabPane.getSelectionModel().select(1);
 //        }
 //    }
+
+    //Doctor Tab
+    @FXML private void docTable (ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+
+    }
 }
