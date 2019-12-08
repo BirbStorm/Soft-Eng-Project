@@ -63,16 +63,16 @@
                 <Button fx:id="patButton" layoutX="51.0" layoutY="14.0" mnemonicParsing="false" onAction="#allPatients" text="See Patients" />
                 <Button id="patButton" fx:id="nurseButton" layoutX="271.0" layoutY="14.0" mnemonicParsing="false" onAction="#allNurses" text="See Nurses" />
                 <Button id="patButton" fx:id="docButton" layoutX="487.0" layoutY="14.0" mnemonicParsing="false" onAction="#allDoctors" text="See Doctors" />
-                <TextField fx:id="dateRec" layoutX="14.0" layoutY="384.0" prefWidth="224.0" promptText="YYYY-MM-DD HH:MM:SS" />
-                <TextField fx:id="issueRec" layoutX="289.0" layoutY="384.0" prefWidth="200.0" promptText="Issue" />
-                <TextField fx:id="recFirst" layoutX="14.0" layoutY="96.0" prefWidth="200.0" promptText="First Name" />
-                <TextField fx:id="recLast" layoutX="248.0" layoutY="96.0" prefWidth="200.0" promptText="Last Name" />
-                <Button fx:id="recUpPat" layoutX="40.0" layoutY="148.0" mnemonicParsing="false" text="Update Patient" />
-                <Button fx:id="recDelPat" layoutX="277.0" layoutY="148.0" mnemonicParsing="false" text="Delete Patient" />
-                <Button fx:id="recAddPat" layoutX="489.0" layoutY="148.0" mnemonicParsing="false" text="Add Patient" />
+                <TextField fx:id="recDate" layoutX="14.0" layoutY="384.0" prefWidth="224.0" promptText="YYYY-MM-DD HH:MM:SS" />
+                <TextField fx:id="recIssue" layoutX="289.0" layoutY="384.0" prefWidth="200.0" promptText="Issue" />
+                <TextField fx:id="recFName" layoutX="14.0" layoutY="96.0" prefWidth="200.0" promptText="First Name" />
+                <TextField fx:id="recLName" layoutX="248.0" layoutY="96.0" prefWidth="200.0" promptText="Last Name" />
                 <TextField fx:id="recSSN" layoutX="475.0" layoutY="96.0" prefWidth="152.0" promptText="Social Security" />
-                <Button fx:id="assignButton" layoutX="230.0" layoutY="245.0" mnemonicParsing="false" text="Assign Doctor to Patient" />
-                <ChoiceBox fx:id="assignDoc" layoutX="40.0" layoutY="246.0" prefWidth="142.0">
+                <Button fx:id="recUpPat" layoutX="40.0" layoutY="148.0" mnemonicParsing="false" text="Update Patient" onAction="#recUpdatePat" />
+                <Button fx:id="recDelPat" layoutX="277.0" layoutY="148.0" mnemonicParsing="false" text="Delete Patient" onAction="#recDeletePat"/>
+                <Button fx:id="recAddPat" layoutX="489.0" layoutY="148.0" mnemonicParsing="false" text="Add Patient" onAction="#recAddPat"/>
+                <Button fx:id="recBtnAssignDoc2Pat" layoutX="230.0" layoutY="245.0" mnemonicParsing="false" text="Assign Doctor to Patient" onAction="#assignDoc2Pat"/>
+                <ChoiceBox fx:id="RecAssignDoc" layoutX="40.0" layoutY="246.0" prefWidth="142.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
@@ -81,9 +81,9 @@
                     </FXCollections>
                   </items>
                 </ChoiceBox>
-                <Button fx:id="addAppt" layoutX="25.0" layoutY="584.0" mnemonicParsing="false" text="Add Appointment" />
-                <Button fx:id="upAppt" layoutX="214.0" layoutY="584.0" mnemonicParsing="false" text="Update Appointment" />
-                <Button fx:id="delAppt" layoutX="433.0" layoutY="584.0" mnemonicParsing="false" text="Delete Appointment" />
+                <Button fx:id="recAddAppt" layoutX="25.0" layoutY="584.0" mnemonicParsing="false" text="Add Appointment" />
+                <Button fx:id="recUpAppt" layoutX="214.0" layoutY="584.0" mnemonicParsing="false" text="Update Appointment" />
+                <Button fx:id="recDelAppt" layoutX="433.0" layoutY="584.0" mnemonicParsing="false" text="Delete Appointment" />
                 <ChoiceBox fx:id="roomBox" layoutX="28.0" layoutY="449.0" prefWidth="186.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">

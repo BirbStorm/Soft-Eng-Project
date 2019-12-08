@@ -1,10 +1,10 @@
 package project.model;
 
-import project.Util.DBUtil;
-import project.model.Appointment;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import project.Util.DBUtil;
 
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -13,7 +13,7 @@ public class apptDAO {
     //*******************************
     //SELECT appointments
     //*******************************
-    public static ObservableList<Appointment> searchappointments () throws SQLException, ClassNotFoundException {
+    public static ObservableList<Appointment> searchappointments() throws SQLException, ClassNotFoundException {
         //Declare a SELECT statement
         String selectStmt = "SELECT * FROM Appointment";
 
@@ -48,5 +48,13 @@ public class apptDAO {
         //return appointments (ObservableList of appointments)
         return appointments;
     }
-    
+
+    private static void addApp(Date date, Integer patSSN, String issue) throws SQLException, ClassNotFoundException{
+        String add = "INSERT INTO APPOINTMENT (Id, Date, PatientSSN, Issue) VALUES ( null, '" + date + "', " + patSSN + ", '" + issue + "');";
+        try {
+            DBUtil.dbExecuteUpdate(add);
+        } catch (SQLException e){
+            System.out.println(e);
+        }
+    }
 }
