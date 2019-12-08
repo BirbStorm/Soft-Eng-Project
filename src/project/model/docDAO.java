@@ -120,6 +120,17 @@ public class docDAO {
         }
     }
 
+    public static void removeDoc (String FName, String LName, int SSN) throws SQLException, ClassNotFoundException{
+        String remove = "DELETE FROM DOCTOR WHERE SSN = '" + SSN + "';";
+
+        try {
+            DBUtil.dbExecuteUpdate(remove);
+        } catch (SQLException e) {
+            System.out.print("Error occured while INSERT Operation: " + e);
+            throw e;
+        }
+    }
+
 
 
 }
