@@ -11,7 +11,7 @@ public class PatientManagerTester{
     @DisplayName("addPatient return correct when adding patients")
     void addPatientTest(){
         PatientManager pm = new PatientManager();
-        int SSN = 999999292;
+        int SSN = 999292;
         Person p = new Person("Andy", "Russel", SSN);
         Patient pat = new Patient(p);
         //assertTrue(pm.addPatient(pat));
@@ -21,10 +21,11 @@ public class PatientManagerTester{
     void addPatientTestforDup(){
         PatientManager pm = new PatientManager();
         int SSN = 999292;
+        int SSN2 = 95499292;
+
         Person p = new Person("Sean", "Northcutt", SSN);
         Patient pat = new Patient(p);
 
-        int SSN2 = 95499292;
         Person p2 = new Person("Carson", "Davis", SSN2);
         Patient pat2 = new Patient(p2);
 

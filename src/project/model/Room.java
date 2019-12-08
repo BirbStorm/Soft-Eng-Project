@@ -9,12 +9,11 @@ public class Room {
     private int number;
 
     /**
-     * @param doctor
      * @param nurse
      * @param number
      * @return
      */
-    public Room(Doctor doctor, Nurse nurse, int number) {
+    public Room( Nurse nurse, int number) {
         this.nurse = nurse;
         this.number = number;
     }
