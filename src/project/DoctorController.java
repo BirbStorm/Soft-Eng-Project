@@ -5,9 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 import project.model.*;
@@ -21,6 +19,9 @@ public class DoctorController {
     @FXML private TextArea symptoms;
     @FXML private TextArea diagnosis;
     @FXML private TextArea medicine;
+
+    @FXML private ChoiceBox docPrecriptionChoice;
+
     @FXML private TableView<ObservableList<String>> recTable, docTable, nurseTable, patTable;
     @FXML private TableColumn<ObservableList<String>, String> column;
 
@@ -78,6 +79,18 @@ public class DoctorController {
             throw e;
         }
     }
+
+    @FXML
+    private void fillPrescriptionChoice(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+        try{
+            ObservableList<String> prescriptionList = apptDAO.getPrescriptionList();
+            docPrecriptionChoice.getItems().addAll(prescriptionList);
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
+    }
+
 //    @FXML protected void tableClick(MouseEvent event) throws SQLException, ClassNotFoundException {
 //        String text = table.getColumns().get(0).getText();
 //        if(event.getClickCount() > 1 && !((text.equals("Num_Movies") || (text.equals("directorName")|| (text.equals("actorName")))))) {
