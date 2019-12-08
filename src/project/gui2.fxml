@@ -11,12 +11,11 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.DoctorController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.DoctorController">
   <children>
     <TabPane layoutX="0.0" layoutY="0.0" prefHeight="720.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
       <tabs>
@@ -24,22 +23,19 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <TextField fx:id="AdminTxtFName" layoutX="14.0" layoutY="47.0" prefWidth="200.0" promptText="First Name" />
-                <TextField fx:id="AdminTxtLName" layoutX="14.0" layoutY="99.0" prefWidth="200.0" promptText="Last Name" />
-                <TextField fx:id="AdminTxtSSN" layoutX="14.0" layoutY="155.0" prefWidth="200.0" promptText="Social Security Number" />
+                <TextField fx:id="firstName" layoutX="14.0" layoutY="47.0" prefWidth="200.0" promptText="First Name" />
+                <TextField fx:id="lastName" layoutX="14.0" layoutY="99.0" prefWidth="200.0" promptText="Last Name" />
+                <TextField fx:id="ssn" layoutX="14.0" layoutY="155.0" prefWidth="200.0" promptText="Social Security Number" />
                 <Text fx:id="errorSSN" fill="#cc0000" layoutX="252.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please only use numbers" visible="true">
                   <font>
                     <Font size="22.0" fx:id="x1" />
                   </font>
                 </Text>
-                <RadioButton fx:id="AdminDocRB" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" selected="true" text="Doctor">
-                           <toggleGroup>
-                              <ToggleGroup fx:id="AdminNurseNDoc" />
-                           </toggleGroup></RadioButton>
-                <RadioButton fx:id="AdminNurseRB" layoutX="169.0" layoutY="230.0" mnemonicParsing="false" selected="false" text="Nurse" toggleGroup="$AdminNurseNDoc" />
-                <Button fx:id="AdminAddNurseNDoc" layoutX="14.0" layoutY="305.0" minHeight="30.0" mnemonicParsing="false" onAction="#AddNurseNDoc" prefHeight="30.0" prefWidth="200.0" text="Add" />
-                <TextField fx:id="AdminTxtRoom" layoutX="540.0" layoutY="47.0" prefWidth="200.0" promptText="Room Number" />
-                <ChoiceBox fx:id="AdminNurseChoice" layoutX="540.0" layoutY="99.0" prefWidth="200.0">
+                <RadioButton fx:id="docRB" layoutX="14.0" layoutY="230.0" mnemonicParsing="false" text="Doctor" />
+                <RadioButton fx:id="nurseRB" layoutX="169.0" layoutY="230.0" mnemonicParsing="false" text="Nurse" />
+                <Button fx:id="addDoc" layoutX="14.0" layoutY="305.0" minHeight="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Add" />
+                <TextField fx:id="roomField" layoutX="540.0" layoutY="47.0" prefWidth="200.0" promptText="Room Number" />
+                <ChoiceBox fx:id="nurseChoice" layoutX="540.0" layoutY="99.0" prefWidth="200.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
@@ -48,9 +44,7 @@
                     </FXCollections>
                   </items>
                 </ChoiceBox>
-                <Button fx:id="AdminAddRoom" layoutX="540.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnAddRoom" text="Add Room" />
-                        <Button fx:id="AdminRemoveNurseNDoc" layoutX="14.0" layoutY="354.0" minHeight="30.0" mnemonicParsing="false" onAction="#RemoveNurseNDoc" prefHeight="30.0" prefWidth="200.0" text="Remove" />
-                        <Button fx:id="AdminRemoveRoom" layoutX="646.0" layoutY="161.0" mnemonicParsing="false" onAction="#btnRemoveRoom" text="Remove Room" />
+                <Button fx:id="addRoom" layoutX="582.0" layoutY="161.0" mnemonicParsing="false" text="Add Room" />
               </children>
             </AnchorPane>
           </content>
@@ -108,7 +102,7 @@
                     <TableColumn prefWidth="75.0" text="Column X" />
                   </columns>
                 </TableView>
-                <ChoiceBox fx:id="doctorChoice" layoutX="14.0" layoutY="25.0" prefWidth="223.0">
+                <ChoiceBox fx:id="docChoice" layoutX="14.0" layoutY="25.0" onMouseClicked="#fillDoctorChoice" prefWidth="223.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
@@ -119,7 +113,7 @@
                 </ChoiceBox>
                 <Button fx:id="docLogin" layoutX="291.0" layoutY="26.0" mnemonicParsing="false" text="Login" />
                 <TextArea fx:id="diagnosis" layoutX="26.0" layoutY="136.0" prefWidth="200.0" promptText="Diagnosis" wrapText="true" />
-                <ChoiceBox fx:id="prescChoice" layoutX="28.0" layoutY="490.0" prefWidth="195.0">
+                <ChoiceBox fx:id="docPrecriptionChoice" layoutX="28.0" layoutY="490.0" onMouseClicked="#fillPrescriptionChoice" prefWidth="195.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />

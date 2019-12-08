@@ -1,5 +1,10 @@
 package project.model;
 
+
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
+import project.Util.DBUtil;
+import project.model.Appointment;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import project.Util.DBUtil;
@@ -49,7 +54,7 @@ public class apptDAO {
         return appointments;
     }
 
-    private static void addApp(Date date, Integer patSSN, String issue) throws SQLException, ClassNotFoundException{
+    public static void addApp(Date date, Integer patSSN, String issue) throws SQLException, ClassNotFoundException{
         String add = "INSERT INTO APPOINTMENT (Id, Date, PatientSSN, Issue) VALUES ( null, '" + date + "', " + patSSN + ", '" + issue + "');";
         try {
             DBUtil.dbExecuteUpdate(add);
@@ -57,4 +62,31 @@ public class apptDAO {
             System.out.println(e);
         }
     }
+    // Select names of prescriptions
+    public static ObservableList<String> getPrescriptionList() throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT Name FROM PRESCRIPTION";
+        //Declare a observable List which comprises of strings
+        ObservableList<String> prescriptions = FXCollections.observableArrayList();
+
+        //Execute SELECT statement
+        try {
+            //Get ResultSet from dbExecuteQuery method
+            ResultSet rs = DBUtil.executeQuery(selectStmt);
+
+            //Fill list
+            while (rs.next()) {
+                String pres = rs.getString("Name");
+
+                //Add prescription to the ObservableList
+                prescriptions.add(pres);
+            }
+            //return appointments (ObservableList of appointments)
+            return prescriptions;
+        } catch (SQLException e) {
+            System.out.println("SQL select operation has been failed: " + e);
+            //Return exception
+            throw e;
+        }
+    }
+
 }
