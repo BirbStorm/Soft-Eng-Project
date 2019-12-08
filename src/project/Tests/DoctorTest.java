@@ -30,12 +30,12 @@ class DoctorTest extends Nurse {
     @Test
     void addPrescription() {
         Date date = new Date();
+        Person p = new Person("Johnnie", "Oldfield", 222);
         int SSN = 222;
-        Person p = new Person("Johnnie", "Oldfield", SSN);
         Patient pat = new Patient(p);
         Appointment a = new Appointment(date, pat, "Cancer");
 
-        Person d = new Person("Sean", "Northcutt", 12356789);
+        Person d = new Person("Sean", "Northcutt", 5234);
         Doctor doc = new Doctor(d);
         //assertTrue(doc.addPrescription("test"));
     }
