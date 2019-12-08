@@ -15,12 +15,12 @@ class ReceptionistTest {
 
     @BeforeEach
     void setUp() {
-        person = new Person("allo", "vera", 23678512);
+        person = new Person("allo", "vera", 1234532);
         receptionistUnderTest = new Receptionist(person);
         Doctor d = null;
         Nurse n = null;
         Patient p = null;
-        Room r = new Room (d,n,22);
+        Room r = new Room (n,22);
     }
 
     @Test

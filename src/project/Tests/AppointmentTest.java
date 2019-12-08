@@ -1,12 +1,12 @@
 package project.Tests;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import project.model.Appointment;
 import project.model.AppointmentManager;
 import project.model.Patient;
 import project.model.Person;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import java.util.GregorianCalendar;
 
