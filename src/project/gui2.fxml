@@ -4,6 +4,7 @@
 <?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -68,10 +69,10 @@
                 <TextField fx:id="recFName" layoutX="14.0" layoutY="96.0" prefWidth="200.0" promptText="First Name" />
                 <TextField fx:id="recLName" layoutX="248.0" layoutY="96.0" prefWidth="200.0" promptText="Last Name" />
                 <TextField fx:id="recSSN" layoutX="475.0" layoutY="96.0" prefWidth="152.0" promptText="Social Security" />
-                <Button fx:id="recUpPat" layoutX="40.0" layoutY="148.0" mnemonicParsing="false" text="Update Patient" onAction="#recUpdatePat" />
-                <Button fx:id="recDelPat" layoutX="277.0" layoutY="148.0" mnemonicParsing="false" text="Delete Patient" onAction="#recDeletePat"/>
-                <Button fx:id="recAddPat" layoutX="489.0" layoutY="148.0" mnemonicParsing="false" text="Add Patient" onAction="#recAddPat"/>
-                <Button fx:id="recBtnAssignDoc2Pat" layoutX="230.0" layoutY="245.0" mnemonicParsing="false" text="Assign Doctor to Patient" onAction="#assignDoc2Pat"/>
+                <Button fx:id="recUpPat" layoutX="40.0" layoutY="148.0" mnemonicParsing="false" onAction="#recUpdatePat" text="Update Patient" />
+                <Button fx:id="recDelPat" layoutX="277.0" layoutY="148.0" mnemonicParsing="false" onAction="#recDeletePat" text="Delete Patient" />
+                <Button fx:id="recAddPat" layoutX="489.0" layoutY="148.0" mnemonicParsing="false" onAction="#recAddPat" text="Add Patient" />
+                <Button fx:id="recBtnAssignDoc2Pat" layoutX="230.0" layoutY="245.0" mnemonicParsing="false" onAction="#assignDoc2Pat" text="Assign Doctor to Patient" />
                 <ChoiceBox fx:id="recAssignDoc" layoutX="40.0" layoutY="246.0" prefWidth="142.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
@@ -81,9 +82,9 @@
                     </FXCollections>
                   </items>
                 </ChoiceBox>
-                <Button fx:id="recAddAppt" layoutX="25.0" layoutY="584.0" mnemonicParsing="false" text="Add Appointment" onAction="#recAddAppt" />
-                <Button fx:id="recUpAppt" layoutX="214.0" layoutY="584.0" mnemonicParsing="false" text="Update Appointment" onAction="#recUpdateAppt"/>
-                <Button fx:id="recDelAppt" layoutX="433.0" layoutY="584.0" mnemonicParsing="false" text="Delete Appointment" onAction="#recDeleteAppt"/>
+                <Button fx:id="recAddAppt" layoutX="25.0" layoutY="584.0" mnemonicParsing="false" onAction="#recAddAppt" text="Add Appointment" />
+                <Button fx:id="recUpAppt" layoutX="214.0" layoutY="584.0" mnemonicParsing="false" onAction="#recUpdateAppt" text="Update Appointment" />
+                <Button fx:id="recDelAppt" layoutX="433.0" layoutY="584.0" mnemonicParsing="false" onAction="#recDeleteAppt" text="Delete Appointment" />
                 <ChoiceBox fx:id="recRoomBox" layoutX="28.0" layoutY="449.0" prefWidth="186.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
@@ -118,7 +119,7 @@
                   </items>
                 </ChoiceBox>
                 <Button fx:id="docLogin" layoutX="291.0" layoutY="26.0" mnemonicParsing="false" text="Login" />
-                <TextArea fx:id="diagnosis" layoutX="26.0" layoutY="136.0" prefWidth="200.0" promptText="Diagnosis" wrapText="true" />
+                <TextArea fx:id="diagnosis" layoutX="26.0" layoutY="136.0" prefHeight="290.0" prefWidth="221.0" promptText="Diagnosis" wrapText="true" />
                 <ChoiceBox fx:id="docPrecriptionChoice" layoutX="28.0" layoutY="490.0" prefWidth="195.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
@@ -129,6 +130,10 @@
                   </items>
                 </ChoiceBox>
                 <Button fx:id="prescAdd" layoutX="258.0" layoutY="490.0" mnemonicParsing="false" text="Add Prescription" />
+                        <Label layoutX="28.0" layoutY="65.0" prefHeight="23.0" prefWidth="195.0" text="Doctor Name" />
+                        <TextArea layoutX="284.0" layoutY="136.0" prefHeight="292.0" prefWidth="302.0" promptText="Symptoms" />
+                        <Label layoutX="26.0" layoutY="107.0" prefHeight="17.0" prefWidth="87.0" text="Diagnosis" />
+                        <Label layoutX="284.0" layoutY="107.0" text="Symptoms" />
               </children>
             </AnchorPane>
           </content>
@@ -137,12 +142,22 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <TableView fx:id="nurseTable" layoutX="640.0" layoutY="14.0" prefHeight="644.0" prefWidth="625.9999000000025">
+                <TableView fx:id="nurseTable" layoutX="640.0" layoutY="14.0" prefHeight="644.0" prefWidth="626.0001220703125">
                   <columns>
                     <TableColumn prefWidth="75.0" text="Column X" />
                     <TableColumn prefWidth="75.0" text="Column X" />
                   </columns>
                 </TableView>
+                <ChoiceBox fx:id="nurseChoice" layoutX="14.0" layoutY="25.0" prefWidth="223.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <Button fx:id="nurseLogin" layoutX="291.0" layoutY="26.0" mnemonicParsing="false" text="Login" />
               </children>
             </AnchorPane>
           </content>

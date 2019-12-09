@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class roomDAO {
     public static void addRoom(int roomID, int nurseSSN) throws SQLException, ClassNotFoundException {
-        String add = "INSERT INTO ROOM (roomID, nurseSSN) VALUES (" + roomID + ", " + nurseSSN + ");";
+        String add = "INSERT INTO ROOM (Id, nurseSSN) VALUES (" + roomID + ", " + nurseSSN + ");";
 
         try {
             DBUtil.dbExecuteUpdate(add);

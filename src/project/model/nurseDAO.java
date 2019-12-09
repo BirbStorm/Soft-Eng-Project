@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import project.Util.DBUtil;
 
+import java.awt.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -122,5 +123,18 @@ public class nurseDAO {
         }
     }
 
-
+    public static Integer getNurseId(String nurseName) throws SQLException, ClassNotFoundException{
+        String get = "SELECT * FROM NURSE WHERE lastName = '" + nurseName + "';";
+        try {
+            Integer id = 0;
+            ResultSet rs = DBUtil.executeQuery(get);
+            while (rs.next()) {
+                id = rs.getInt(1);
+            }
+            return id;
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw e;
+        }
+    }
 }
