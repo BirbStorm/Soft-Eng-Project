@@ -12,8 +12,8 @@ public class docDAO {
     //*******************************
     //SELECT an Employee
     //*******************************
-    public static Doctor searchDoctor (String dSSN) throws SQLException, ClassNotFoundException {
-        String selectStmt = "SELECT * FROM Doctor WHERE SSN = "+dSSN;
+    public static Doctor searchDoctor (String doctorSSN) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * FROM Doctor WHERE SSN = "+ doctorSSN;
 
         //Execute SELECT statement
         try {
@@ -21,11 +21,10 @@ public class docDAO {
             ResultSet rsEmp = DBUtil.executeQuery(selectStmt);
 
             //Send ResultSet to the getEmployeeFromResultSet method and get employee object
-            Doctor Doctor = getDoctorFromRS(rsEmp);
-
-            return Doctor;
+            Doctor doc = getDoctorFromRS(rsEmp);
+            return doc;
         } catch (SQLException e) {
-            System.out.println("While searching for a Doctor with " + dSSN + " id, an error occurred: " + e);
+            System.out.println("While searching for a Doctor with " + doctorSSN + " id, an error occurred: " + e);
             throw e;
         }
     }
@@ -45,21 +44,12 @@ public class docDAO {
     //SELECT Doctors
     //*******************************
     public static ResultSet searchDoctors () throws SQLException, ClassNotFoundException {
-        //Declare a SELECT statement
-        String selectStmt = "SELECT * FROM DOCTOR";
-
-        //Execute SELECT statement
+        String selectDocs = "SELECT * FROM DOCTOR";
         try {
-            //Get ResultSet from dbExecuteQuery method
-            ResultSet rs = DBUtil.executeQuery(selectStmt);
-
-//            ObservableList<Doctor> docList = getDoctorList(rs);
-
-            //Return employee object
-            return rs;
+            ResultSet docs = DBUtil.executeQuery(selectDocs);
+            return docs;
         } catch (SQLException e) {
-            System.out.println("SQL select operation has been failed: " + e);
-            //Return exception
+            System.out.println("SQL select operation has failed: " + e);
             throw e;
         }
     }

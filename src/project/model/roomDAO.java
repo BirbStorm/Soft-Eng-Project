@@ -1,7 +1,9 @@
 package project.model;
 
+import javafx.collections.ObservableList;
 import project.Util.DBUtil;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class roomDAO {
@@ -23,6 +25,18 @@ public class roomDAO {
             DBUtil.dbExecuteUpdate(remove);
         }catch (SQLException | ClassNotFoundException e) {
             System.out.println("Error occured while REMOVE Operation: " + e);
+            throw e;
+        }
+    }
+
+    public static ResultSet searchRooms() throws SQLException, ClassNotFoundException{
+        String selectRooms = "SELECT * FROM ROOM";
+
+        try{
+            ResultSet rs = DBUtil.executeQuery(selectRooms);
+            return rs;
+        } catch (SQLException e){
+            System.out.println(e);
             throw e;
         }
     }

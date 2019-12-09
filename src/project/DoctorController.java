@@ -1,5 +1,6 @@
 package project;
 
+import com.mysql.cj.result.SqlDateValueFactory;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,31 +27,14 @@ public class DoctorController {
 
     //Receptionist info
     @FXML private TextField recDate, recIssue, recFName, recLName, recSSN;
-    @FXML private ChoiceBox recAssignDoc;
+    @FXML private ChoiceBox recAssignDoc, recRoomBox;
 
+    //Doctor info
+    @FXML private ChoiceBox docPrescriptionChoice, docChoice;
 
-    @FXML private TextArea patientName;
-    @FXML private TextArea roomNumber;
-    @FXML private TextArea patientInfo;
-    @FXML private TextArea symptoms;
-    @FXML private TextArea diagnosis;
-    @FXML private TextArea medicine;
-
-    @FXML private ChoiceBox docPrecriptionChoice;
-    @FXML private ChoiceBox docChoice;
-
+    //Initialize info
     @FXML private TableView<ObservableList<String>> recTable, docTable, nurseTable, patTable;
     @FXML private TableColumn<ObservableList<String>, String> column;
-
-    @FXML
-    private void initialize() throws SQLException, ClassNotFoundException {
-        try{
-            fillDoctorChoice();
-            fillPrescriptionChoice();
-        }catch (SQLException | ClassNotFoundException e){
-            throw e;
-        }
-    }
 
     //Admin Tab
     @FXML private void AddNurseNDoc(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
@@ -141,7 +125,7 @@ public class DoctorController {
     }
     @FXML private void allNurses(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
         try{
-            ResultSet rs = nurseDAO.searchNurse();
+            ResultSet rs = nurseDAO.searchNurses();
             updateTable(recTable, rs);
         }catch (SQLException e){
             System.out.println("Error occurred while getting employees information from DB.\n" + e);
@@ -173,11 +157,29 @@ public class DoctorController {
     @FXML private void assignDoc2Pat(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
 
     }
-    @FXML private void recAddApp(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
-        try {
+    @FXML private void recAddAppt(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+        try{
             Date date = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(recDate.getText());
             Integer ssn = Integer.parseInt(recTable.getSelectionModel().getSelectedItem().get(0));
-            apptDAO.addApp(date, ssn, recIssue.getText());
+            apptDAO.addAppt(date, ssn, recIssue.getText());
+        } catch (SQLException | ParseException e){
+            System.out.println(e);
+        }
+    }
+    @FXML private void recUpdateAppt(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+        try{
+            Date date = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(recDate.getText());
+            Integer ssn = Integer.parseInt(recTable.getSelectionModel().getSelectedItem().get(0));
+            apptDAO.updateAppt(date, ssn, recIssue.getText());
+        } catch (SQLException | ParseException e){
+            System.out.println(e);
+        }
+    }
+    @FXML private void recDeleteAppt(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+        try{
+            Date date = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(recDate.getText());
+            Integer ssn = Integer.parseInt(recTable.getSelectionModel().getSelectedItem().get(0));
+            apptDAO.deleteAppt(date, ssn, recIssue.getText());
         } catch (SQLException | ParseException e){
             System.out.println(e);
         }
@@ -193,7 +195,7 @@ public class DoctorController {
 //        }
 //    }
 
-    // DOCTOR TAB ****************************************************************************************
+    //DOCTOR TAB ****************************************************************************************
     // @FXML private void docTable (ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
     //     try{
     //         ResultSet rs = docDAO.searchPatients();
@@ -203,9 +205,11 @@ public class DoctorController {
     //         throw e;
     //     }
     // }
-    
-    @FXML
-    private void fillDoctorChoice() throws SQLException, ClassNotFoundException{
+
+
+
+    //Initialize each choiceBox
+    @FXML private void fillDoctorChoice() throws SQLException, ClassNotFoundException{
         ArrayList<String> names = new ArrayList<String>();
 
         try{
@@ -213,22 +217,67 @@ public class DoctorController {
             while (rs.next()) { 
                 names.add(rs.getString("lastName"));
             }
-            ObservableList<String> obNames = FXCollections.observableArrayList(names);
-            docChoice.setItems(obNames);
+            ObservableList<String> docNames = FXCollections.observableArrayList(names);
+            docChoice.setItems(docNames);
+            recAssignDoc.setItems(docNames);
         }catch (SQLException e){
             System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
+    }
+    @FXML private void fillPrescriptionChoice() throws SQLException, ClassNotFoundException{
+        ArrayList<String> names = new ArrayList<String>();
+        try{
+            ResultSet rs = apptDAO.searchPrescriptions();
+            while (rs.next()) {
+                names.add(rs.getString("Name"));
+            }
+            ObservableList<String> prescriptionList = FXCollections.observableArrayList(names);
+            docPrescriptionChoice.setItems(prescriptionList);
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
+    }
+    @FXML private void fillNurseChoice() throws SQLException, ClassNotFoundException{
+        ArrayList<String> names = new ArrayList<String>();
+
+        try{
+            ResultSet rs = nurseDAO.searchNurses();
+            while (rs.next()) {
+                names.add(rs.getString("lastName"));
+            }
+            ObservableList<String> nurseNames = FXCollections.observableArrayList(names);
+            AdminNurseChoice.setItems(nurseNames);
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
+    }
+    @FXML private void fillRoomChoice() throws SQLException, ClassNotFoundException{
+        ArrayList<String> roomNames = new ArrayList<String>();
+
+        try{
+            ResultSet rs = roomDAO.searchRooms();
+            while (rs.next()) {
+                roomNames.add(rs.getString("roomID"));
+            }
+            ObservableList<String> rooms = FXCollections.observableArrayList(roomNames);
+            recRoomBox.setItems(rooms);
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
+    }
+    @FXML private void initialize() throws SQLException, ClassNotFoundException {
+        try{
+            fillDoctorChoice();
+//            fillPrescriptionChoice();
+            fillNurseChoice();
+            fillRoomChoice();
+        }catch (SQLException | ClassNotFoundException e){
             throw e;
         }
     }
 
-    @FXML
-    private void fillPrescriptionChoice() throws SQLException, ClassNotFoundException{
-        try{
-            ObservableList<String> prescriptionList = apptDAO.getPrescriptionList();
-            docPrecriptionChoice.setItems(prescriptionList);
-        }catch (SQLException e){
-            System.out.println("Error occurred while getting employees information from DB.\n" + e);
-            throw e;
-        }
-    }
 }
