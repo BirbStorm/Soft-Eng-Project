@@ -54,7 +54,7 @@ public class apptDAO {
         return appointments;
     }
 
-    public static void addApp(Date date, Integer patSSN, String issue) throws SQLException, ClassNotFoundException{
+    public static void addAppt(Date date, Integer patSSN, String issue) throws SQLException, ClassNotFoundException{
         String add = "INSERT INTO APPOINTMENT (Id, Date, PatientSSN, Issue) VALUES ( null, '" + date + "', " + patSSN + ", '" + issue + "');";
         try {
             DBUtil.dbExecuteUpdate(add);
@@ -62,6 +62,23 @@ public class apptDAO {
             System.out.println(e);
         }
     }
+    public static void updateAppt(Date date, Integer patSSN, String issue) throws SQLException, ClassNotFoundException{
+        String update = "UPDATE APPOINTMENT SET DATE = '" + date + "', Issue = " + issue + "WHERE patSSN = " + patSSN + ";";
+        try {
+            DBUtil.dbExecuteUpdate(update);
+        } catch (SQLException e){
+            System.out.println(e);
+        }
+    }
+    public static void deleteAppt(Date date, Integer patSSN, String issue) throws SQLException, ClassNotFoundException{
+        String delete = "DELETE FROM APPOINTMENT WHERE PatientSSN = '" + patSSN + "';";
+        try {
+            DBUtil.dbExecuteUpdate(delete);
+        } catch (SQLException e){
+            System.out.println(e);
+        }
+    }
+
     // Select names of prescriptions
     public static ObservableList<String> getPrescriptionList() throws SQLException, ClassNotFoundException {
         String selectStmt = "SELECT Name FROM PRESCRIPTION";
@@ -85,6 +102,16 @@ public class apptDAO {
         } catch (SQLException e) {
             System.out.println("SQL select operation has been failed: " + e);
             //Return exception
+            throw e;
+        }
+    }
+    public static ResultSet searchPrescriptions() throws SQLException, ClassNotFoundException{
+        String selectPrescriptions = "SELECT * FROM PRESCRIPTION";
+        try{
+            ResultSet pres = DBUtil.executeQuery(selectPrescriptions);
+            return pres;
+        } catch (SQLException e) {
+            System.out.println(e);
             throw e;
         }
     }
