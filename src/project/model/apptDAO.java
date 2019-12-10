@@ -140,5 +140,18 @@ public class apptDAO {
             throw e;
         }
     }
+    public static ResultSet searchApptsDoc(String lName) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM APPOINTMENT\n" +
+                "INNER JOIN PATIENT ON patientSSN = PATIENT.SSN\n" +
+                "INNER JOIN DOCTOR ON PATIENT.docSSN = DOCTOR.SSN\n" +
+                "WHERE DOCTOR.lastname = '" + lName + "'";
+        try {
+            ResultSet rs = DBUtil.executeQuery(selectStmt);
+            return rs;
+        } catch (SQLException e){
+            System.out.println(e);
+            throw e;
+        }
+    }
 
 }

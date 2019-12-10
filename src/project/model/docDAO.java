@@ -13,7 +13,7 @@ public class docDAO {
     //SELECT an Employee
     //*******************************
     public static Doctor searchDoctor (String doctorSSN) throws SQLException, ClassNotFoundException {
-        String selectStmt = "SELECT * FROM Doctor WHERE SSN = "+ doctorSSN;
+        String selectStmt = "SELECT * FROM DOCTOR WHERE SSN = "+ doctorSSN;
 
         //Execute SELECT statement
         try {
@@ -30,7 +30,7 @@ public class docDAO {
     }
 
     public static Doctor searchDoctorName (String doctorName) throws SQLException, ClassNotFoundException {
-        String selectStmt = "SELECT * FROM Doctor WHERE lastname = "+ doctorName;
+        String selectStmt = "SELECT * FROM DOCTOR WHERE lastName = "+ doctorName;
 
         //Execute SELECT statement
         try {
@@ -47,7 +47,7 @@ public class docDAO {
     }
 
     public static String searchDoctorSNN (String doctorName) throws SQLException, ClassNotFoundException {
-        String selectStmt = "SELECT * FROM Doctor WHERE lastname = "+ doctorName;
+        String selectStmt = "SELECT * FROM DOCTOR WHERE lastname = "+ doctorName;
 
         //Execute SELECT statement
         try {

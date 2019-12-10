@@ -222,8 +222,8 @@ public class DoctorController {
     }
     @FXML private void docLogin(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
         try{
-            currentDoc = docDAO.searchDoctorName((String)docChoice.getValue());
-            docUpdateTable();
+            ResultSet rs = apptDAO.searchApptsDoc((String)docChoice.getValue());
+            updateTable(docTable, rs);
         }catch (SQLException e){
             System.out.println("Error occurred while getting employees information from DB.\n" + e);
             throw e;
