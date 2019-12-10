@@ -202,8 +202,8 @@ public class DoctorController {
     @FXML private void recDeleteAppt(ActionEvent actionEvent) throws ClassNotFoundException{
         try{
             Date date = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(recDate.getText());
-            Integer ssn = Integer.parseInt(recTable.getSelectionModel().getSelectedItem().get(0));
-            apptDAO.deleteAppt(date, ssn, recIssue.getText());
+            String ssn = (recTable.getSelectionModel().getSelectedItem().get(0));
+            apptDAO.deleteAppt(ssn);
         } catch (SQLException | ParseException e){
             System.out.println(e);
         }
@@ -215,16 +215,52 @@ public class DoctorController {
     }
     //Patient Tab
     @FXML private void patLogin(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
-
+        try{
+            String LName = patBox.getSelectionModel().getSelectedItem().toString();
+            ResultSet rs = apptDAO.searchAppts(LName);
+            updateTable(patTable, rs);
+            String ssn = patientDAO.getPatientSSN(LName).toString();
+            String FName = patientDAO.getFName(Integer.parseInt(ssn)).toString();
+            PatTxtFName.setText(FName);
+            PatTxtLName.setText(LName);
+        } catch (SQLException e){
+            System.out.println(e);
+            throw e;
+        }
     }
     @FXML private void patUpdatePat(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
-
+        try{
+            String LName = patBox.getSelectionModel().getSelectedItem().toString();
+            String ssn = patientDAO.getPatientSSN(LName).toString();
+            String FName = patientDAO.getFName(Integer.parseInt(ssn));
+            patientDAO.updateFirstName(ssn, FName);
+            patientDAO.updateLastName(ssn, LName);
+        } catch (SQLException e){
+            System.out.println(e);
+            throw e;
+        }
     }
-    @FXML private void patUpdateAppt(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
-
+    @FXML private void patUpdateAppt(ActionEvent actionEvent) throws SQLException, ClassNotFoundException, ParseException {
+        try{
+            String LName = patBox.getSelectionModel().getSelectedItem().toString();
+            Integer ssn = Integer.parseInt(patientDAO.getPatientSSN(LName).toString());
+            Date date = (Date) new SimpleDateFormat("dd/MM/yyyy").parse(PatDate.getText());
+            apptDAO.updateAppt(date, ssn, PatIssue.getText());
+        } catch (SQLException e){
+            System.out.println(e);
+            throw e;
+        }
     }
     @FXML private void patDeleteAppt(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
-
+        try{
+            String LName = patBox.getSelectionModel().getSelectedItem().toString();
+            String ssn = patientDAO.getPatientSSN(LName).toString();
+            String FName = patientDAO.getFName(Integer.parseInt(ssn));
+            apptDAO.deleteAppt(ssn);
+        } catch (SQLException e){
+            System.out.println(e);
+            throw e;
+        }
     }
 
     //Initialize each choiceBox
