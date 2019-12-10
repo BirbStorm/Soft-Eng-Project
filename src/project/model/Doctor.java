@@ -15,6 +15,7 @@ public class Doctor extends Nurse{
         this.doctor = doctor;
     }
 
+    public Person getPerson(){ return this.doctor; }
     /**
      * @param appointment
      */

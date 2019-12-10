@@ -31,6 +31,8 @@ public class DoctorController {
 
     //Doctor info
     @FXML private ChoiceBox docPrescriptionChoice, docChoice;
+    @FXML private Button docLogin, prescAdd;
+    private Doctor currentDoc;
 
     //Nurse info
     @FXML private ChoiceBox nurseChoice;
@@ -190,6 +192,25 @@ public class DoctorController {
             apptDAO.deleteAppt(date, ssn, recIssue.getText());
         } catch (SQLException | ParseException e){
             System.out.println(e);
+        }
+    }
+
+    //Doctor Tab
+    @FXML private void docUpdateTable() throws SQLException, ClassNotFoundException{
+        try{
+            ResultSet rs = apptDAO.searchDocAppointments(Integer.toString(currentDoc.getPerson().getSSN()));
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
+        }
+    }
+    @FXML private void docLogin(ActionEvent actionEvent) throws SQLException, ClassNotFoundException{
+        try{
+            currentDoc = docDAO.searchDoctorName((String)docChoice.getValue());
+            docUpdateTable();
+        }catch (SQLException e){
+            System.out.println("Error occurred while getting employees information from DB.\n" + e);
+            throw e;
         }
     }
 
