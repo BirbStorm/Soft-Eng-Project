@@ -71,35 +71,6 @@ public class nurseDAO {
         //return patients (ObservableList of patients)
         return nurses;
     }
-
-    //*************************************
-    //UPDATE an patient's Name
-    //*************************************
-    public static void updateFirstName (String SSN, String name) throws SQLException, ClassNotFoundException {
-        //Declare a UPDATE statement
-        String updateStmt ="UPDATE NURSE\n" + " SET firstName = '" + name + "  WHERE SSN = " + SSN + ";";
-
-        //Execute UPDATE operation
-        try {
-            DBUtil.dbExecuteUpdate(updateStmt);
-        } catch (SQLException e) {
-            System.out.print("Error occurred while UPDATE Operation: " + e);
-            throw e;
-        }
-    }
-    public static void updateLastName (String SSN, String name) throws SQLException, ClassNotFoundException {
-        //Declare a UPDATE statement
-        String updateStmt ="UPDATE NURSE\n" + " SET lastName = '" + name + "  WHERE SSN = " + SSN + ";";
-
-        //Execute UPDATE operation
-        try {
-            DBUtil.dbExecuteUpdate(updateStmt);
-        } catch (SQLException e) {
-            System.out.print("Error occurred while UPDATE Operation: " + e);
-            throw e;
-        }
-    }
-
     //Admin methods
     public static void addNurse (String FName, String LName, String SSN) throws SQLException, ClassNotFoundException{
         String add = "INSERT INTO NURSE (SSN, firstName, lastName) VALUES (" + SSN + ", '" + FName + "', '" + LName + "');";
