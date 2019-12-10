@@ -92,7 +92,6 @@ public class docDAO {
     private static ObservableList<Doctor> getDoctorList(ResultSet rs) throws SQLException, ClassNotFoundException {
         //Declare a observable List which comprises of Doctor objects
         ObservableList<Doctor> Doctors = FXCollections.observableArrayList();
-
         while (rs.next()) {
             Doctor doc = new Doctor(new Person(rs.getString("firstName"),
                     rs.getString("lastName"), rs.getInt("SSN")));
@@ -102,40 +101,10 @@ public class docDAO {
         //return Doctors (ObservableList of Doctors)
         return Doctors;
     }
-
-    //*************************************
-    //UPDATE an Doctor's Name
-    //*************************************
-    public static void updateFirstName (String SSN, String name) throws SQLException, ClassNotFoundException {
-        //Declare a UPDATE statement
-        String updateStmt ="UPDATE Doctor\n" + " SET firstName = '" + name + "  WHERE SSN = " + SSN + ";";
-
-        //Execute UPDATE operation
-        try {
-            DBUtil.dbExecuteUpdate(updateStmt);
-        } catch (SQLException e) {
-            System.out.print("Error occurred while UPDATE Operation: " + e);
-            throw e;
-        }
-    }
-    public static void updateLastName (String SSN, String name) throws SQLException, ClassNotFoundException {
-        //Declare a UPDATE statement
-        String updateStmt ="UPDATE Doctor\n" + " SET lastName = '" + name + "  WHERE SSN = " + SSN + ";";
-
-        //Execute UPDATE operation
-        try {
-            DBUtil.dbExecuteUpdate(updateStmt);
-        } catch (SQLException e) {
-            System.out.print("Error occurred while UPDATE Operation: " + e);
-            throw e;
-        }
-    }
-
     //Admin methods
 
     public static void addDoc (String FName, String LName, int SSN) throws SQLException, ClassNotFoundException{
         String add = "INSERT INTO DOCTOR (SSN, firstName, lastName) VALUES (" + SSN + ", '" + FName + "', '" + LName + "');";
-
         try {
             DBUtil.dbExecuteUpdate(add);
         } catch (SQLException e) {
@@ -144,13 +113,26 @@ public class docDAO {
         }
     }
 
-    public static void removeDoc (String FName, String LName, int SSN) throws SQLException, ClassNotFoundException{
+    public static void removeDoc(String FName, String LName, int SSN) throws SQLException, ClassNotFoundException{
         String remove = "DELETE FROM DOCTOR WHERE SSN = '" + SSN + "';";
-
         try {
             DBUtil.dbExecuteUpdate(remove);
         } catch (SQLException e) {
             System.out.print("Error occured while INSERT Operation: " + e);
+            throw e;
+        }
+    }
+    public static Integer getDocSSN(String docName)throws SQLException, ClassNotFoundException{
+        String get = "SELECT SSN FROM DOCTOR WHERE lastName = '" + docName + "';";
+        try{
+            Integer id = 0;
+            ResultSet rs = DBUtil.executeQuery(get);
+            while (rs.next()) {
+                id = rs.getInt(1);
+            }
+            return id;
+        } catch (SQLException e) {
+            System.out.println(e);
             throw e;
         }
     }

@@ -85,7 +85,7 @@ public class apptDAO {
             System.out.println(e);
         }
     }
-    public static void deleteAppt(Date date, Integer patSSN, String issue) throws SQLException, ClassNotFoundException{
+    public static void deleteAppt(String patSSN) throws SQLException, ClassNotFoundException{
         String delete = "DELETE FROM APPOINTMENT WHERE PatientSSN = '" + patSSN + "';";
         try {
             DBUtil.dbExecuteUpdate(delete);
@@ -126,6 +126,16 @@ public class apptDAO {
             ResultSet pres = DBUtil.executeQuery(selectPrescriptions);
             return pres;
         } catch (SQLException e) {
+            System.out.println(e);
+            throw e;
+        }
+    }
+    public static ResultSet searchAppts(String lName) throws SQLException, ClassNotFoundException{
+        String selectStmt = "SELECT * FROM APPOINTMENT WHERE patientSSN = (SELECT SSN FROM PATIENT WHERE lastName = '" + lName + "');";
+        try {
+            ResultSet rs = DBUtil.executeQuery(selectStmt);
+            return rs;
+        } catch (SQLException e){
             System.out.println(e);
             throw e;
         }
