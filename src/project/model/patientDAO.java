@@ -62,12 +62,9 @@ public class patientDAO {
             throw e;
         }
     }
-
-    //Select * from patient operation
     private static ObservableList<Patient> getPatientList(ResultSet rs) throws SQLException, ClassNotFoundException {
         //Declare a observable List which comprises of patient objects
         ObservableList<Patient> patients = FXCollections.observableArrayList();
-
         while (rs.next()) {
             Patient pat = new Patient(new Person(rs.getString("firstName"),
                     rs.getString("lastName"), rs.getInt("SSN")));
@@ -77,7 +74,6 @@ public class patientDAO {
         //return patients (ObservableList of patients)
         return patients;
     }
-
     //*************************************
     //UPDATE an patient's Name
     //*************************************
@@ -105,7 +101,6 @@ public class patientDAO {
             throw e;
         }
     }
-
     public static void deletePatient (Integer SSN) throws SQLException, ClassNotFoundException {
         String delete = "DELETE FROM PATIENT WHERE SSN = " + SSN +";";
 
@@ -116,7 +111,6 @@ public class patientDAO {
             throw e;
         }
     }
-
     public static  void addPatient (Integer SSN, String FName, String LName) throws SQLException, ClassNotFoundException{
         String add = "INSERT INTO PATIENT (SSN, firstName, lastName) VALUES (" + SSN + ", '" + FName + "','" + LName + "');";
 
@@ -126,7 +120,6 @@ public class patientDAO {
             System.out.println(e);
         }
     }
-
     public static void assignDoc2Pat (Integer docSSN, Integer patSSN) throws SQLException, ClassNotFoundException{
         String assign = "UPDATE PATIENT " + "SET docSSN = " + docSSN + " WHERE SSN = " + patSSN + ";";
 
@@ -134,6 +127,20 @@ public class patientDAO {
             DBUtil.dbExecuteUpdate(assign);
         } catch (SQLException e) {
             System.out.println(e);
+        }
+    }
+    public static Integer getPatientSSN(String patName)throws SQLException, ClassNotFoundException{
+        String get = "SELECT SSN FROM PATIENT WHERE lastName = '" + patName + "';";
+        try{
+            Integer id = 0;
+            ResultSet rs = DBUtil.executeQuery(get);
+            while (rs.next()) {
+                id = rs.getInt(1);
+            }
+            return id;
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw e;
         }
     }
 

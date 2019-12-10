@@ -44,8 +44,6 @@
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
                     </FXCollections>
                   </items>
                 </ChoiceBox>
@@ -77,8 +75,6 @@
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
                     </FXCollections>
                   </items>
                 </ChoiceBox>
@@ -89,12 +85,17 @@
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
                     </FXCollections>
                   </items>
                 </ChoiceBox>
                 <Text font="$x1" layoutX="238.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Room" />
+                <ChoiceBox fx:id="recPatCombo" layoutX="433.0" layoutY="245.0" prefWidth="150.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
               </children>
             </AnchorPane>
           </content>
@@ -113,8 +114,6 @@
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
                     </FXCollections>
                   </items>
                 </ChoiceBox>
@@ -124,8 +123,6 @@
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
                     </FXCollections>
                   </items>
                 </ChoiceBox>
@@ -152,12 +149,12 @@
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
-                      <String fx:value="Item 2" />
-                      <String fx:value="Item 3" />
                     </FXCollections>
                   </items>
                 </ChoiceBox>
                 <Button fx:id="nurseLogin" layoutX="291.0" layoutY="26.0" mnemonicParsing="false" text="Login" />
+                        <Label layoutX="43.0" layoutY="83.0" text="Symptoms" />
+                        <TextArea layoutX="35.0" layoutY="117.0" prefHeight="417.0" prefWidth="302.0" promptText="Symptoms" />
               </children>
             </AnchorPane>
           </content>
@@ -172,7 +169,7 @@
                     <TableColumn prefWidth="75.0" text="Column X" />
                   </columns>
                 </TableView>
-                <ChoiceBox id="doctorChoice" fx:id="patBox" layoutX="14.0" layoutY="29.0" prefWidth="223.0">
+                <ChoiceBox fx:id="patBox" layoutX="14.0" layoutY="29.0" prefWidth="223.0">
                   <items>
                     <FXCollections fx:factory="observableArrayList">
                       <String fx:value="Item 1" />
