@@ -29,6 +29,40 @@ public class docDAO {
         }
     }
 
+    public static Doctor searchDoctorName (String doctorName) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * FROM Doctor WHERE lastname = "+ doctorName;
+
+        //Execute SELECT statement
+        try {
+            //Get ResultSet from dbExecuteQuery method
+            ResultSet rsEmp = DBUtil.executeQuery(selectStmt);
+
+            //Send ResultSet to the getEmployeeFromResultSet method and get employee object
+            Doctor doc = getDoctorFromRS(rsEmp);
+            return doc;
+        } catch (SQLException e) {
+            System.out.println("While searching for a Doctor with " + doctorName + " id, an error occurred: " + e);
+            throw e;
+        }
+    }
+
+    public static String searchDoctorSNN (String doctorName) throws SQLException, ClassNotFoundException {
+        String selectStmt = "SELECT * FROM Doctor WHERE lastname = "+ doctorName;
+
+        //Execute SELECT statement
+        try {
+            //Get ResultSet from dbExecuteQuery method
+            ResultSet rsEmp = DBUtil.executeQuery(selectStmt);
+
+            //Send ResultSet to the getEmployeeFromResultSet method and get employee object
+            String doc = rsEmp.getString("SSN");
+            return doc;
+        } catch (SQLException e) {
+            System.out.println("While searching for a Doctor with " + doctorName + " id, an error occurred: " + e);
+            throw e;
+        }
+    }
+
     //Use ResultSet from DB as parameter and set Employee Object's attributes and return employee object.
     private static Doctor getDoctorFromRS(ResultSet rs) throws SQLException
     {

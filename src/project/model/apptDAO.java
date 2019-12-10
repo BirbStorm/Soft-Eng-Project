@@ -1,13 +1,9 @@
 package project.model;
 
 
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import project.Util.DBUtil;
-import project.model.Appointment;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import project.Util.DBUtil;
 
 import java.sql.Date;
 import java.sql.ResultSet;
@@ -18,7 +14,7 @@ public class apptDAO {
     //*******************************
     //SELECT appointments
     //*******************************
-    public static ObservableList<Appointment> searchappointments() throws SQLException, ClassNotFoundException {
+    public static ResultSet searchAppointments() throws SQLException, ClassNotFoundException {
         //Declare a SELECT statement
         String selectStmt = "SELECT * FROM Appointment";
 
@@ -26,11 +22,30 @@ public class apptDAO {
         try {
             //Get ResultSet from dbExecuteQuery method
             ResultSet rs = DBUtil.executeQuery(selectStmt);
-
-            ObservableList<Appointment> apptList = getAppointmentList(rs);
-
+            
             //Return employee object
-            return apptList;
+            return rs;
+        } catch (SQLException e) {
+            System.out.println("SQL select operation has been failed: " + e);
+            //Return exception
+            throw e;
+        }
+    }
+
+    //Return ResultSet for specific doctor
+    public static ResultSet searchDocAppointments(String doctorSNN) throws SQLException, ClassNotFoundException {
+        //Declare a SELECT statement
+        String selectStmt = "Select * FROM APPOINTMENT " +
+                "INNER JOIN PATIENT ON PATIENT.SSN = APPOINTMENT.patSSN " +
+                "INNER JOIN DOCTOR ON DOCTOR.SSN AND PATIENT.docSSN = " + doctorSNN;
+
+        //Execute SELECT statement
+        try {
+            //Get ResultSet from dbExecuteQuery method
+            ResultSet rs = DBUtil.executeQuery(selectStmt);
+            
+            //Return employee object
+            return rs;
         } catch (SQLException e) {
             System.out.println("SQL select operation has been failed: " + e);
             //Return exception

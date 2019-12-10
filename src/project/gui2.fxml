@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.DoctorController">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.DoctorController">
   <children>
     <TabPane layoutX="0.0" layoutY="0.0" prefHeight="720.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
       <tabs>
@@ -117,7 +117,7 @@
                     </FXCollections>
                   </items>
                 </ChoiceBox>
-                <Button fx:id="docLogin" layoutX="291.0" layoutY="26.0" mnemonicParsing="false" text="Login" />
+                <Button fx:id="docLogin" layoutX="291.0" layoutY="26.0" mnemonicParsing="false" onAction="#docLogin" text="Login" />
                 <TextArea fx:id="diagnosis" layoutX="26.0" layoutY="136.0" prefHeight="290.0" prefWidth="221.0" promptText="Diagnosis" wrapText="true" />
                 <ChoiceBox fx:id="docPrecriptionChoice" layoutX="28.0" layoutY="490.0" prefWidth="195.0">
                   <items>
