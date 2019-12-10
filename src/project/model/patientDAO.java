@@ -47,14 +47,7 @@ public class patientDAO {
     public static ResultSet searchPatients () throws SQLException, ClassNotFoundException {
         //Declare a SELECT statement
         String selectStmt = "SELECT * FROM PATIENT";
-
-        //Execute SELECT statement
         try {
-            //Get ResultSet from dbExecuteQuery method
-
-            //ObservableList<Patient> patList = getPatientList(rs);
-
-            //Return employee object
             return DBUtil.executeQuery(selectStmt);
         } catch (SQLException e) {
             System.out.println("SQL select operation has been failed: " + e);
@@ -138,6 +131,20 @@ public class patientDAO {
                 id = rs.getInt(1);
             }
             return id;
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw e;
+        }
+    }
+    public static String getFName(Integer ssn)throws SQLException, ClassNotFoundException{
+        String get = "SELECT firstName FROM PATIENT WHERE SSN = '" + ssn + "';";
+        try {
+            String name = "";
+            ResultSet rs = DBUtil.executeQuery(get);
+            while (rs.next()) {
+                name = rs.getString(1);
+            }
+            return name;
         } catch (SQLException e) {
             System.out.println(e);
             throw e;
